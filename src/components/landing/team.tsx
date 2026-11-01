@@ -90,8 +90,11 @@ export function Team({ members = teamData }: TeamSectionProps) {
             transition={{ duration: 0.5 }}
             className="inline-flex items-center gap-2 rounded-full border border-violet-500/30 bg-violet-500/10 px-4 py-1.5 text-xs font-semibold uppercase tracking-wider text-violet-300 mb-6 backdrop-blur-md shadow-[0_0_24px_rgba(168,85,247,0.18)]"
           >
-            <Sparkles className="h-3.5 w-3.5 text-violet-400" />
-            <span>✨ THE MINDS BEHIND SOFTILO</span>
+                  <span className="flex h-2 w-2 relative">
+              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-accent-cyan opacity-75"></span>
+              <span className="relative inline-flex rounded-full h-2 w-2 bg-accent-cyan"></span>
+            </span>
+            <span>THE MINDS BEHIND SOFTILO</span>
           </motion.div>
 
           {/* Headline */}

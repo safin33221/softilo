@@ -103,7 +103,7 @@ export function Hero() {
             </span>
 
             <span className="flex items-center gap-1.5 tracking-wide text-gray-300 group-hover:text-white transition-colors">
-              <span className="text-amber-400">⭐</span>
+              <span className="text-amber-400"></span>
               <span>Trusted by 25+ Global Brands &amp; Startups Worldwide</span>
             </span>
           </motion.div>

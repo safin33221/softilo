@@ -37,7 +37,7 @@ export function LandingPage() {
         <WhyChooseUs />
         <Portfolio />
         <Team />
-        <Testimonials />
+        {/* <Testimonials /> */}
         <CTA />
       </main>
 
