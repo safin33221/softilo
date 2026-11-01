@@ -28,10 +28,7 @@ import {
 import { ServiceItem } from "@/data/data";
 import { Navbar } from "@/components/landing/navbar";
 import { Footer } from "@/components/landing/footer";
-import {
-  EducationalHeroSection,
-  EducationalPricingSection,
-} from "@/services/educational-solutions";
+import { EducationalPricingSection } from "@/services/educational-solutions";
 
 const iconMap: Record<string, React.ElementType> = {
   Code,
@@ -60,15 +57,13 @@ export function ServiceDetailView({ service, allServices }: ServiceDetailViewPro
     .slice(0, 3);
 
   return (
-    <div className="relative min-h-screen bg-[#0a0a0c] text-white overflow-x-clip selection:bg-accent-blue/30 selection:text-white">
-      {/* Background glow effects (for non-educational services) */}
-      {service.slug !== "educational-solutions" && (
-        <div className="fixed inset-0 pointer-events-none z-0">
-          <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[1000px] h-[550px] bg-[radial-gradient(ellipse_at_top,rgba(59,130,246,0.18),transparent_70%)]" />
-          <div className="absolute top-[35%] right-[-10%] w-[600px] h-[600px] bg-[radial-gradient(circle,rgba(168,85,247,0.12),transparent_70%)]" />
-          <div className="absolute bottom-[20%] left-[-10%] w-[600px] h-[600px] bg-[radial-gradient(circle,rgba(0,212,255,0.1),transparent_70%)]" />
-        </div>
-      )}
+    <div className="relative min-h-screen bg-background text-white overflow-x-clip selection:bg-accent-blue/30 selection:text-white">
+      {/* Background glow effects */}
+      <div className="fixed inset-0 pointer-events-none z-0">
+        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[1000px] h-[550px] bg-[radial-gradient(ellipse_at_top,rgba(59,130,246,0.18),transparent_70%)]" />
+        <div className="absolute top-[35%] right-[-10%] w-[600px] h-[600px] bg-[radial-gradient(circle,rgba(168,85,247,0.12),transparent_70%)]" />
+        <div className="absolute bottom-[20%] left-[-10%] w-[600px] h-[600px] bg-[radial-gradient(circle,rgba(0,212,255,0.1),transparent_70%)]" />
+      </div>
 
       <Navbar />
 
@@ -95,9 +90,6 @@ export function ServiceDetailView({ service, allServices }: ServiceDetailViewPro
         </div>
 
         {/* Hero Section */}
-        {service.slug === "educational-solutions" ? (
-          <EducationalHeroSection />
-        ) : (
         <section className="relative mx-auto max-w-7xl px-6 pt-6 pb-20">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
             <div className="lg:col-span-7">
@@ -245,7 +237,6 @@ export function ServiceDetailView({ service, allServices }: ServiceDetailViewPro
             </div>
           </div>
         </section>
-        )}
 
         {/* Educational Solutions Dedicated Pricing & Packages Section */}
         {service.slug === "educational-solutions" && <EducationalPricingSection />}
