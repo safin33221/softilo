@@ -530,9 +530,9 @@ export const servicesData: ServiceItem[] = [
     ],
     faq: [
       {
-        question: "How does the 2-Year Software Ownership Transfer model work?",
+        question: "How does the 2-Year Software Ownership work?",
         answer:
-          "Unlike traditional SaaS providers that charge subscription rent forever, maintaining a continuous subscription for 2 years with Softilo grants your institution 100% full software/system license ownership—giving you a permanent institutional asset.",
+          "Maintain your package subscription continuously for 2 years, and we grant you full ownership of the software—along with 2 years of free maintenance included from day one.",
       },
       {
         question: "Are there any monthly maintenance or hidden support fees?",
