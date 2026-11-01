@@ -22,6 +22,7 @@ import {
   Building2,
   Video,
   Film,
+  Compass,
   Calendar,
   MessageSquare,
 } from "lucide-react";
@@ -29,6 +30,7 @@ import { ServiceItem } from "@/data/data";
 import { Navbar } from "@/components/landing/navbar";
 import { Footer } from "@/components/landing/footer";
 import { EducationalPricingSection } from "@/services/educational-solutions";
+import { TravelPricingSection } from "@/services/travel-solutions";
 
 const iconMap: Record<string, React.ElementType> = {
   Code,
@@ -40,6 +42,7 @@ const iconMap: Record<string, React.ElementType> = {
   Building2,
   Video,
   Film,
+  Compass,
 };
 
 interface ServiceDetailViewProps {
@@ -153,7 +156,8 @@ export function ServiceDetailView({ service, allServices }: ServiceDetailViewPro
                   <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
                 </Link>
 
-                {service.slug === "educational-solutions" && (
+                {(service.slug === "educational-solutions" ||
+                  service.slug === "travel-solutions") && (
                   <a
                     href="#pricing"
                     className="inline-flex items-center gap-2 rounded-full border border-violet-500/40 bg-violet-500/10 px-6 py-3.5 text-sm font-semibold text-violet-200 backdrop-blur-xl transition-all duration-300 hover:border-violet-400 hover:bg-violet-500/20 hover:text-white"
@@ -240,6 +244,9 @@ export function ServiceDetailView({ service, allServices }: ServiceDetailViewPro
 
         {/* Educational Solutions Dedicated Pricing & Packages Section */}
         {service.slug === "educational-solutions" && <EducationalPricingSection />}
+
+        {/* Travel Agency Solutions Dedicated Pricing & Packages Section */}
+        {service.slug === "travel-solutions" && <TravelPricingSection />}
 
         {/* Feature Checklist & Highlights Section */}
         <section className="relative mx-auto max-w-7xl px-6 py-20 border-t border-white/5">

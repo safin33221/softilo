@@ -930,6 +930,106 @@ export const servicesData: ServiceItem[] = [
       },
     ],
   },
+  {
+    id: "10",
+    title: "Travel Agency Solutions",
+    slug: "travel-solutions",
+    tagline: "Next-Gen Booking Engines, Visa Trackers & Multi-Branch Travel ERP",
+    category: "Travel Tech",
+    shortDesc: "Tour, Hajj/Umrah booking portals, visa tracking, and agent ledger ERP.",
+    fullDesc:
+      "We engineer complete digital ecosystems for modern travel agencies, Hajj & Umrah operators, and multi-branch ticketing networks. From real-time tour & flight booking portals and automated passport/visa status trackers to sub-agent commission ledgers and promotional tour documentaries, we transform your agency into a high-conversion powerhouse.",
+    iconName: "Compass",
+    features: [
+      "Dynamic Tour, Flight & Hajj/Umrah Booking Engine",
+      "Real-Time Passport & Visa Document Status Tracker",
+      "Sub-Agent, Vendor Ledger & Automated Commission Accounting",
+      "bKash, Nagad & SSLCommerz Instant Payment Gateway",
+      "Automated Invoice Generation & Passenger SMS Alerts",
+      "Bundled Tour Video Documentaries & Year-Round Social Graphics",
+    ],
+    featureHighlights: [
+      {
+        title: "Automated Visa & Hajj Tracking",
+        description:
+          "Passengers track passport and visa processing stages live via phone number or booking ID with automated SMS updates.",
+      },
+      {
+        title: "Agent & Vendor Ledger ERP",
+        description:
+          "Zero-error B2B sub-agent balance management, vendor payables, and profit-per-package reconciliation.",
+      },
+      {
+        title: "2-Year Ownership & Zero Maint.",
+        description:
+          "Enjoy 2 years of free maintenance (saving ৳2,000–৳3,000/mo) and receive full software ownership after 2 years.",
+      },
+    ],
+    deliverables: [
+      "Custom Travel Booking Website & Dynamic Tour Catalog",
+      "Passport/Visa Status Tracker & Lead Generation CRM",
+      "Agent, Vendor & Multi-Branch Accounting ERP Portal",
+      "Promotional Tour Video Documentaries & Festival Design Packs",
+      "2 Years Free Maintenance & Full Software Ownership after 2 Years",
+    ],
+    metrics: [
+      { value: "+324%", label: "Direct Package Bookings" },
+      { value: "99.6%", label: "Visa & Ledger Accuracy" },
+      { value: "৳0", label: "Maintenance Fee for 2 Years" },
+      { value: "2 Yrs", label: "To Full Software Ownership" },
+    ],
+    process: [
+      {
+        step: "01",
+        title: "Agency & Package Workflow Audit",
+        description:
+          "Map your tour packages, Hajj/Umrah batches, visa checklists, and sub-agent commission structures.",
+      },
+      {
+        step: "02",
+        title: "Booking Engine & ERP Configuration",
+        description:
+          "Deploy dynamic package catalogs, visa tracking portals, agent ledgers, and bKash/Nagad payment rails.",
+      },
+      {
+        step: "03",
+        title: "Brand Media & Documentary Production",
+        description:
+          "Produce promotional tour films, monthly cover graphics, and national day visual suites.",
+      },
+      {
+        step: "04",
+        title: "Staff Training & Live Rollout",
+        description:
+          "Onboard counter staff and sub-agents with 2 years of priority zero-cost maintenance.",
+      },
+    ],
+    techStack: [
+      "Next.js",
+      "Tailwind CSS",
+      "PostgreSQL",
+      "Node.js",
+      "bKash / Nagad / SSLCommerz",
+      "Automated SMS Gateway",
+    ],
+    faq: [
+      {
+        question: "How does the 2-Year Software Ownership work for travel agencies?",
+        answer:
+          "Maintain your continuous annual subscription for 2 years and Softilo transfers full software ownership to your agency—eliminating perpetual monthly rent.",
+      },
+      {
+        question: "Are there any monthly server upkeep or maintenance charges?",
+        answer:
+          "No. All travel tiers include 2 Years Zero Maintenance Fee, saving your agency ৳2,000 to ৳3,000 per month in standard maintenance charges.",
+      },
+      {
+        question: "Can passengers check their Visa or Hajj status online?",
+        answer:
+          "Yes! Our built-in Visa & Passport Tracker lets clients check real-time application progress and triggers automated SMS notifications at every stage.",
+      },
+    ],
+  },
 ];
 
 export const portfolioProjects: ProjectItem[] = [

@@ -9,6 +9,7 @@ import {
   Video,
   Cpu,
   Film,
+  Compass,
   ArrowRight,
 } from "lucide-react";
 import { motion } from "framer-motion";
@@ -57,7 +58,7 @@ const services = [
     className: "",
   },
   {
-    icon: Cpu,
+    icon: Film,
     title: "Motion Graphics",
     slug: "motion-graphics",
     desc: "Creative animations and visual storytelling for businesses.",
@@ -76,6 +77,13 @@ const services = [
     slug: "educational-solutions",
     desc: "School, coaching center, and learning management platforms.",
     className: "",
+  },
+  {
+    icon: Compass,
+    title: "Travel Agency Solutions",
+    slug: "travel-solutions",
+    desc: "Tour, Hajj/Umrah booking portals, visa tracking, and agent ledger ERP.",
+    className: "md:col-span-2",
   },
 ];
 
