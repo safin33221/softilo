@@ -32,7 +32,7 @@ export function LandingPage() {
         <Stats />
         <Services />
         <Industries />
-        <Packages />
+        {/* <Packages /> */}
         {/* <AdditionalServices /> */}
         <WhyChooseUs />
         <Portfolio />
