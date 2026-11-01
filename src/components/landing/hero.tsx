@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import Image from "next/image";
-import { ArrowRight, ArrowUpRight, Star, Sparkles, ShieldCheck } from "lucide-react";
+import { ArrowRight, ArrowUpRight, Star } from "lucide-react";
 import { motion } from "framer-motion";
 
 const clientAvatars = [

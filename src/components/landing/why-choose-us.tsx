@@ -2,7 +2,7 @@ import {
   Award,
   HeartHandshake,
   Rocket,
-  Sparkles,
+  TrendingUp,
   Target,
   Zap,
 } from "lucide-react";
@@ -96,7 +96,7 @@ export function WhyChooseUs() {
           >
             <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=2070&auto=format&fit=crop')] bg-cover bg-center opacity-10 transition-opacity duration-500 group-hover:opacity-20" />
             <div className="relative z-10">
-              <Sparkles className="mb-4 h-8 w-8 text-accent-cyan" />
+              <TrendingUp className="mb-4 h-8 w-8 text-accent-cyan" />
               <h3 className="font-display mb-2 text-2xl font-bold">
                 Viral Content Ideas
               </h3>

@@ -526,9 +526,19 @@ export const servicesData: ServiceItem[] = [
       "PostgreSQL",
       "AWS S3 & CloudFront",
       "Mux / Bunny.net Video",
-      "Stripe / Razorpay",
+      "bKash / Nagad / SSLCommerz",
     ],
     faq: [
+      {
+        question: "How does the 2-Year Software Ownership Transfer model work?",
+        answer:
+          "Unlike traditional SaaS providers that charge subscription rent forever, maintaining a continuous subscription for 2 years with Softilo grants your institution 100% full software/system license ownership—giving you a permanent institutional asset.",
+      },
+      {
+        question: "Are there any monthly maintenance or hidden support fees?",
+        answer:
+          "Zero. Every package includes 2 Years Free Maintenance, saving your coaching center or academy ৳2,000–৳3,000 per month in market-standard maintenance, server monitoring, and bug resolution costs.",
+      },
       {
         question: "Can our existing student and grade records be imported?",
         answer:
@@ -834,7 +844,7 @@ export const servicesData: ServiceItem[] = [
     shortDesc: "Creative animations and visual storytelling for businesses.",
     fullDesc:
       "Explain complex technical concepts, abstract software architectures, and visionary product designs with fluid 2D and 3D motion graphics. We create brand idents, product reveals, and explainer animations that captivate audiences.",
-    iconName: "Wand2",
+    iconName: "Film",
     features: [
       "3D Product Renders & Photorealistic Exploded Views",
       "Kinetic Typography & Dynamic Logo Idents",

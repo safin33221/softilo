@@ -6,7 +6,6 @@ import { motion, AnimatePresence } from "framer-motion";
 import {
   Mail,
   Clock,
-  Sparkles,
   CheckCircle2,
   Send,
   MessageSquare,
@@ -42,6 +41,7 @@ const TIMELINE_OPTIONS = [
 function ContactFormInner({ services }: { services: ServiceItem[] }) {
   const searchParams = useSearchParams();
   const preselectedServiceSlug = searchParams.get("service") || "";
+  const preselectedPackage = searchParams.get("package") || "";
 
   const initialService =
     services.find((s) => s.slug === preselectedServiceSlug)?.title ||
@@ -55,7 +55,9 @@ function ContactFormInner({ services }: { services: ServiceItem[] }) {
     service: initialService,
     budget: "$5,000 - $15,000",
     timeline: "Within 1 Month",
-    message: "",
+    message: preselectedPackage
+      ? `Interested in claiming/discussing: ${preselectedPackage} (including 2 Years Free Maintenance & 2-Year Software Ownership Transfer).`
+      : "",
   });
 
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -394,7 +396,7 @@ export function ContactView({ services }: ContactViewProps) {
             transition={{ duration: 0.5 }}
             className="inline-flex items-center gap-2 rounded-full border border-accent-blue/30 bg-accent-blue/10 px-4 py-1.5 text-xs font-semibold uppercase tracking-wider text-accent-cyan mb-6 backdrop-blur-md"
           >
-            <Sparkles className="h-3.5 w-3.5" />
+            <ShieldCheck className="h-3.5 w-3.5" />
             <span>Connect With Our Leadership</span>
           </motion.div>
 

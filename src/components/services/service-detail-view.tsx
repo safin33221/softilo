@@ -7,7 +7,7 @@ import {
   ArrowLeft,
   ArrowRight,
   CheckCircle2,
-  Sparkles,
+  Award,
   ShieldCheck,
   Zap,
   HelpCircle,
@@ -21,13 +21,14 @@ import {
   ShoppingBag,
   Building2,
   Video,
-  Wand2,
+  Film,
   Calendar,
   MessageSquare,
 } from "lucide-react";
 import { ServiceItem } from "@/data/data";
 import { Navbar } from "@/components/landing/navbar";
 import { Footer } from "@/components/landing/footer";
+import { EducationalPricingSection } from "@/services/educational-solutions";
 
 const iconMap: Record<string, React.ElementType> = {
   Code,
@@ -38,7 +39,7 @@ const iconMap: Record<string, React.ElementType> = {
   ShoppingBag,
   Building2,
   Video,
-  Wand2,
+  Film,
 };
 
 interface ServiceDetailViewProps {
@@ -152,6 +153,15 @@ export function ServiceDetailView({ service, allServices }: ServiceDetailViewPro
                   <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
                 </Link>
 
+                {service.slug === "educational-solutions" && (
+                  <a
+                    href="#pricing"
+                    className="inline-flex items-center gap-2 rounded-full border border-violet-500/40 bg-violet-500/10 px-6 py-3.5 text-sm font-semibold text-violet-200 backdrop-blur-xl transition-all duration-300 hover:border-violet-400 hover:bg-violet-500/20 hover:text-white"
+                  >
+                    <span>View Pricing &amp; Packages</span>
+                  </a>
+                )}
+
                 <Link
                   href="/portfolio"
                   className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/[0.03] px-6 py-3.5 text-sm font-medium text-gray-200 backdrop-blur-xl transition-all duration-300 hover:border-white/30 hover:bg-white/[0.08] hover:text-white"
@@ -218,7 +228,7 @@ export function ServiceDetailView({ service, allServices }: ServiceDetailViewPro
                       <span>Agile Bi-Weekly Sprints with Live Staging Previews</span>
                     </div>
                     <div className="flex items-center gap-3 text-xs text-gray-300">
-                      <Sparkles className="h-4 w-4 text-purple-400 shrink-0" />
+                      <Award className="h-4 w-4 text-purple-400 shrink-0" />
                       <span>Full Intellectual Property &amp; Codebase Transfer</span>
                     </div>
                   </div>
@@ -227,6 +237,9 @@ export function ServiceDetailView({ service, allServices }: ServiceDetailViewPro
             </div>
           </div>
         </section>
+
+        {/* Educational Solutions Dedicated Pricing & Packages Section */}
+        {service.slug === "educational-solutions" && <EducationalPricingSection />}
 
         {/* Feature Checklist & Highlights Section */}
         <section className="relative mx-auto max-w-7xl px-6 py-20 border-t border-white/5">
@@ -452,7 +465,7 @@ export function ServiceDetailView({ service, allServices }: ServiceDetailViewPro
 
             <div className="relative z-10 max-w-3xl mx-auto">
               <span className="inline-flex items-center gap-2 rounded-full border border-accent-blue/30 bg-accent-blue/10 px-4 py-1.5 text-xs font-semibold uppercase tracking-wider text-accent-cyan mb-6">
-                <Sparkles className="h-3.5 w-3.5" />
+                <Award className="h-3.5 w-3.5" />
                 <span>Ready to Execute?</span>
               </span>
 

@@ -6,7 +6,7 @@ import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
 import {
   ArrowUpRight,
-  Sparkles,
+  Award,
   ExternalLink,
   X,
   Layers,
@@ -57,7 +57,7 @@ export function PortfolioView({ projects }: PortfolioViewProps) {
             transition={{ duration: 0.5 }}
             className="inline-flex items-center gap-2 rounded-full border border-accent-blue/30 bg-accent-blue/10 px-4 py-1.5 text-xs font-semibold uppercase tracking-wider text-accent-cyan mb-6 backdrop-blur-md"
           >
-            <Sparkles className="h-3.5 w-3.5" />
+            <Award className="h-3.5 w-3.5" />
             <span>Case Studies &amp; Client Impact</span>
           </motion.div>
 

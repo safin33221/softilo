@@ -7,7 +7,8 @@ import {
   ShoppingBag,
   Share2,
   Video,
-  Wand2,
+  Cpu,
+  Film,
   ArrowRight,
 } from "lucide-react";
 import { motion } from "framer-motion";
@@ -21,7 +22,7 @@ const services = [
     className: "md:col-span-2",
   },
   {
-    icon: Wand2,
+    icon: Cpu,
     title: "AI Automation",
     slug: "ai-automation",
     desc: "Automate workflows, customer support, lead generation, and operations.",
@@ -56,7 +57,7 @@ const services = [
     className: "",
   },
   {
-    icon: Wand2,
+    icon: Cpu,
     title: "Motion Graphics",
     slug: "motion-graphics",
     desc: "Creative animations and visual storytelling for businesses.",
