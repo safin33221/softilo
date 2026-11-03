@@ -1,7 +1,10 @@
+"use client";
+
 import Link from "next/link";
 import { Menu, X } from "lucide-react";
 import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
+import { SoftiloLogo } from "@/components/ui/softilo-logo";
 
 const navLinks = [
   { name: "Services", href: "/#services" },
@@ -27,23 +30,21 @@ export function Navbar() {
   }, []);
 
   return (
-    <motion.nav
+    <motion.header
       initial={{ y: -100 }}
       animate={{ y: 0 }}
       transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
       className={`fixed left-0 right-0 top-0 z-50 transition-all duration-500 ${
         scrolled
-          ? "border-b border-white/5 bg-background/70 py-4 backdrop-blur-xl"
-          : "bg-transparent py-6"
+          ? "border-b border-white/5 bg-background/70 py-3.5 backdrop-blur-xl"
+          : "bg-transparent py-5"
       }`}
     >
-      <div className="mx-auto flex max-w-7xl items-center justify-between px-6">
-        <Link
-          href="/"
-          className="font-display text-2xl font-bold tracking-tighter text-white"
-        >
-          SOFTILO<span className="text-accent-blue">.</span>
-        </Link>
+      <nav
+        aria-label="Primary Navigation"
+        className="mx-auto flex max-w-7xl items-center justify-between px-6"
+      >
+        <SoftiloLogo size="md" />
 
         <div className="hidden items-center gap-8 md:flex">
           <div className="glass-card flex items-center gap-6 rounded-full px-6 py-2">
@@ -68,12 +69,13 @@ export function Navbar() {
         <button
           type="button"
           aria-label={mobileMenuOpen ? "Close navigation menu" : "Open navigation menu"}
+          aria-expanded={mobileMenuOpen}
           className="text-white md:hidden"
           onClick={() => setMobileMenuOpen((open) => !open)}
         >
           {mobileMenuOpen ? <X /> : <Menu />}
         </button>
-      </div>
+      </nav>
 
       {mobileMenuOpen && (
         <motion.div
@@ -100,6 +102,6 @@ export function Navbar() {
           </Link>
         </motion.div>
       )}
-    </motion.nav>
+    </motion.header>
   );
 }

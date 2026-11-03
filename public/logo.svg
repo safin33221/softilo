@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" fill="none">
+  <defs>
+    <linearGradient id="softiloGrad" x1="165" y1="25" x2="35" y2="175" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#58C7E8" />
+      <stop offset="50%" stop-color="#4D7FE6" />
+      <stop offset="100%" stop-color="#6E4CC9" />
+    </linearGradient>
+  </defs>
+  <!-- Outer Ring -->
+  <circle cx="100" cy="100" r="82" stroke="url(#softiloGrad)" stroke-width="11" />
+  <!-- Top-Left Diagonal Bar -->
+  <line x1="48" y1="126" x2="126" y2="48" stroke="url(#softiloGrad)" stroke-width="11" stroke-linecap="round" />
+  <!-- Center Full Diagonal Bar -->
+  <line x1="42" y1="158" x2="158" y2="42" stroke="url(#softiloGrad)" stroke-width="11" stroke-linecap="round" />
+  <!-- Bottom-Right Diagonal Bar -->
+  <line x1="74" y1="152" x2="152" y2="74" stroke="url(#softiloGrad)" stroke-width="11" stroke-linecap="round" />
+  <!-- Left Inner Vertical Connector -->
+  <line x1="87" y1="87" x2="87" y2="139" stroke="url(#softiloGrad)" stroke-width="11" stroke-linecap="round" />
+  <!-- Right Inner Vertical Connector -->
+  <line x1="113" y1="61" x2="113" y2="113" stroke="url(#softiloGrad)" stroke-width="11" stroke-linecap="round" />
+</svg>

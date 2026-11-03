@@ -277,11 +277,10 @@ function ContactFormInner({ services }: { services: ServiceItem[] }) {
                       onClick={() =>
                         setFormData({ ...formData, budget: tier.label })
                       }
-                      className={`rounded-2xl border p-3 text-center transition-all ${
-                        isSelected
+                      className={`rounded-2xl border p-3 text-center transition-all ${isSelected
                           ? "border-accent-cyan bg-accent-blue/15 text-white shadow-md shadow-accent-blue/20"
                           : "border-white/5 bg-white/[0.02] text-gray-400 hover:border-white/15 hover:bg-white/[0.04]"
-                      }`}
+                        }`}
                     >
                       <span className="block text-xs sm:text-sm font-bold text-white mb-0.5">
                         {tier.label}
@@ -451,7 +450,7 @@ export function ContactView({ services }: ContactViewProps) {
 
                 <div className="space-y-4">
                   <a
-                    href="mailto:hello@softilo.com"
+                    href="mailto:hello.softilo@gmail.com"
                     className="flex items-center gap-4 p-3.5 rounded-2xl border border-white/5 bg-white/[0.02] hover:bg-white/[0.05] transition-all group"
                   >
                     <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-blue-500/10 text-accent-blue border border-blue-500/20 group-hover:scale-105 transition-transform">
@@ -460,7 +459,7 @@ export function ContactView({ services }: ContactViewProps) {
                     <div>
                       <div className="text-xs text-gray-400">Official Inquiries</div>
                       <div className="text-sm font-semibold text-white group-hover:text-accent-cyan transition-colors">
-                        hello@softilo.com
+                        hello.softilo@gmail.com
                       </div>
                     </div>
                   </a>

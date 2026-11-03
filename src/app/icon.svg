@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" fill="none">
+  <defs>
+    <linearGradient id="softiloGrad" x1="165" y1="25" x2="35" y2="175" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#58C7E8" />
+      <stop offset="50%" stop-color="#4D7FE6" />
+      <stop offset="100%" stop-color="#6E4CC9" />
+    </linearGradient>
+  </defs>
+  <rect width="200" height="200" rx="44" fill="#0A0A0F" />
+  <circle cx="100" cy="100" r="78" stroke="url(#softiloGrad)" stroke-width="11" />
+  <line x1="50" y1="124" x2="124" y2="50" stroke="url(#softiloGrad)" stroke-width="11" stroke-linecap="round" />
+  <line x1="45" y1="155" x2="155" y2="45" stroke="url(#softiloGrad)" stroke-width="11" stroke-linecap="round" />
+  <line x1="76" y1="150" x2="150" y2="76" stroke="url(#softiloGrad)" stroke-width="11" stroke-linecap="round" />
+  <line x1="87" y1="87" x2="87" y2="137" stroke="url(#softiloGrad)" stroke-width="11" stroke-linecap="round" />
+  <line x1="113" y1="63" x2="113" y2="113" stroke="url(#softiloGrad)" stroke-width="11" stroke-linecap="round" />
+</svg>
+

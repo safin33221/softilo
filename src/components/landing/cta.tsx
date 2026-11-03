@@ -32,7 +32,7 @@ export function CTA() {
           <motion.a
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
-            href="mailto:hello@softilo.com"
+            href="mailto:hello.softilo@gmail.com"
             className="group relative z-10 mx-auto flex w-fit items-center gap-3 rounded-full bg-white px-10 py-5 text-lg font-bold text-black transition-all hover:shadow-[0_0_40px_-10px_rgba(59,130,246,0.3)]"
           >
             Book Free Consultation
