@@ -5,7 +5,7 @@ const industries = [
   {
     name: "School & College",
     image:
-      "https://6a2ef1d3d2c53535166b7fc3.imgix.net/1709902138174.jpg",
+      "https://images.unsplash.com/photo-1523240795612-9a054b0db644?q=80&w=2070&auto=format&fit=crop",
   },
   {
     name: "Restaurant",

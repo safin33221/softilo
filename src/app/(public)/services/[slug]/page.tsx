@@ -3,7 +3,7 @@ import { notFound } from "next/navigation";
 import { getAllServices, getServiceBySlug } from "@/data/data";
 import { ServiceDetailView } from "@/components/services/service-detail-view";
 
-const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://softilo.";
+const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://softilo.io";
 
 interface PageProps {
   params: Promise<{

@@ -57,7 +57,8 @@ export const teamData: TeamMember[] = [
     id: "4",
     name: "Nusrat Jahan",
     role: "AI Automation Specialist",
-    image: "/images/team/nusrat.jpg",
+    image:
+      "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=600&auto=format&fit=crop",
     bio: "Building autonomous workflows, smart chatbot pipelines, and enterprise automation systems.",
     socialUrl: {
       linkedin: "https://linkedin.com",
