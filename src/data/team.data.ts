@@ -40,6 +40,17 @@ export const teamData: TeamMember[] = [
       twitter: "",
     },
   },
+  {
+    id: "5",
+    name: "Belal Hossain",
+    role: "Chief Creative Officer (CCO)",
+    image: "/images/team/Belal-Hossain.png",
+    bio: "Leading Softilo's creative vision, visual identity, and design strategy. Specializing in graphic design, brand development, creative direction, and delivering impactful visual experiences.",
+    socialUrl: {
+      linkedin: "",
+    },
+  },
+
 
   {
     id: "3",
@@ -53,15 +64,5 @@ export const teamData: TeamMember[] = [
       twitter: "",
     },
   },
-  {
-    id: "4",
-    name: "Nusrat Jahan",
-    role: "AI Automation Specialist",
-    image:
-      "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=600&auto=format&fit=crop",
-    bio: "Building autonomous workflows, smart chatbot pipelines, and enterprise automation systems.",
-    socialUrl: {
-      linkedin: "https://linkedin.com",
-    },
-  },
+
 ];
