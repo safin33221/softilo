@@ -25,6 +25,11 @@ const teamAvatars = [
     image: "/images/team/jahedul-alam.png",
   },
   {
+    name: "Belal Hossain",
+    role: "Chief Creative Officer",
+    image: "/images/team/Belal-Hossain.png",
+  },
+  {
     name: "Muntasir Mahmud",
     role: "Full Stack Developer",
     image: "/images/team/muntasir-mahmud.png",

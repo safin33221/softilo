@@ -29,7 +29,7 @@ export function LandingPage() {
       <main>
         <Hero />
         <Marquee />
-        <Stats />
+        {/* <Stats /> */}
         <Services />
         <Industries />
         {/* <Packages /> */}
