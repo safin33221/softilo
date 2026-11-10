@@ -18,7 +18,7 @@ export const teamData: TeamMember[] = [
     name: "Safayet Hossan Safin",
     role: "Founder & CEO",
     image: "/images/team/safin.jpg",
-    bio: "Full Stack Developer & SaaS Builder. Leading software architectures, AI automations, and digital brand scaling at Softilo. Based in Chattogram, Bangladesh.",
+    bio: "Software Developer. Leading software architectures, AI automations, and digital brand scaling at Softilo. Based in Chattogram, Bangladesh.",
     portfolio: "https://safayet-hossan.vercel.app",
     socialUrl: {
       linkedin: "https://linkedin.com/in/safayethossansafin",
@@ -41,7 +41,7 @@ export const teamData: TeamMember[] = [
     },
   },
   {
-    id: "5",
+    id: "3",
     name: "Belal Hossain",
     role: "Chief Creative Officer (CCO)",
     image: "/images/team/Belal-Hossain.png",
@@ -53,7 +53,7 @@ export const teamData: TeamMember[] = [
 
 
   {
-    id: "3",
+    id: "4",
     name: "Muntasir Mahmud",
     role: "Full Stack Developer",
     image: "/images/team/muntasir-mahmud.png",
@@ -65,13 +65,21 @@ export const teamData: TeamMember[] = [
     },
   },
   {
-    id: "4",
+    id: "5",
     name: "Shawon Devnath",
     role: "Social Media Manager",
     image: "/images/team/Shawon-Devnath.png",
     bio: "Managing Softilo's social media presence through content planning, audience engagement, and performance tracking to strengthen brand visibility and support business growth.",
     socialUrl: {},
-    
+
+  },
+  {
+    id: "6",
+    name: "Siam Patwary Noman",
+    role: "Creative Media Producer",
+    image: "/images/team/siam-patwary-noman.png",
+    bio: "Creating engaging videos and visual content for Softilo through video editing, motion graphics, and creative storytelling to bring brands and ideas to life.",
+    socialUrl: {},
   },
 
 ];
