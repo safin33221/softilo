@@ -488,6 +488,31 @@ export function ContactView({ services }: ContactViewProps) {
                     </div>
                   </div>
                 </div>
+
+                {/* Official Social Profiles */}
+                <div className="mt-6 pt-5 border-t border-white/10">
+                  <span className="text-xs font-semibold text-gray-400 block mb-3">
+                    Official Social Channels
+                  </span>
+                  <div className="grid grid-cols-2 gap-3">
+                    <a
+                      href="https://www.linkedin.com/company/softilo"
+                      target="_blank"
+                      rel="me noopener noreferrer"
+                      className="flex items-center justify-center gap-2 rounded-xl border border-white/10 bg-white/[0.03] px-3.5 py-2.5 text-xs font-semibold text-white transition-all hover:border-accent-cyan/40 hover:bg-accent-cyan/10"
+                    >
+                      <span>LinkedIn</span>
+                    </a>
+                    <a
+                      href="https://www.facebook.com/softilo0"
+                      target="_blank"
+                      rel="me noopener noreferrer"
+                      className="flex items-center justify-center gap-2 rounded-xl border border-white/10 bg-white/[0.03] px-3.5 py-2.5 text-xs font-semibold text-white transition-all hover:border-accent-blue/40 hover:bg-accent-blue/10"
+                    >
+                      <span>Facebook</span>
+                    </a>
+                  </div>
+                </div>
               </div>
 
               {/* Consultation Guarantee Card */}

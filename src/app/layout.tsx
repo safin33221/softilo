@@ -1,7 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import "./globals.css";
 
-const SITE_URL =  "https://softilo.io";
+const SITE_URL = "https://softilo.io";
 
 export const viewport: Viewport = {
   themeColor: "#0a0a0f",
@@ -110,13 +110,16 @@ const organizationJsonLd = {
         "@type": "PostalAddress",
         addressCountry: "BD",
       },
-      sameAs: [],
+      sameAs: [
+        "https://www.facebook.com/softilo0",
+        "https://www.linkedin.com/company/softilo",
+      ],
     },
     {
       "@type": "WebSite",
       "@id": `${SITE_URL}/#website`,
       url: SITE_URL,
-      name: "Softilo Agency",
+      name: "Softilo",
       publisher: {
         "@id": `${SITE_URL}/#organization`,
       },
@@ -125,11 +128,15 @@ const organizationJsonLd = {
     {
       "@type": "ProfessionalService",
       "@id": `${SITE_URL}/#service`,
-      name: "Softilo Agency",
+      name: "Softilo",
       image: `${SITE_URL}/logo.jpg`,
       url: SITE_URL,
       priceRange: "৳৳",
       email: "hello.softilo@gmail.com",
+      sameAs: [
+        "https://www.facebook.com/softilo0",
+        "https://www.linkedin.com/company/softilo",
+      ],
       areaServed: ["BD", "US", "GB", "AE"],
       knowsAbout: [
         "Custom Software Development",

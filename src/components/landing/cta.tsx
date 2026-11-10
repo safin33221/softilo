@@ -25,7 +25,7 @@ export function CTA() {
           </h2>
 
           <p className="relative z-10 mx-auto mb-10 max-w-2xl text-xl text-gray-400">
-            Let Softilo Agency turn your business into a powerful digital brand.
+            Let Softilo turn your business into a powerful digital brand.
             Book a free strategy call today.
           </p>
 

@@ -39,7 +39,7 @@ export async function generateMetadata({
     keywords: [
       service.title,
       service.tagline,
-      "Softilo Agency",
+      "Softilo",
       "Software Ownership after 2 Years",
       "2 Years Free Maintenance",
       ...service.features,
@@ -49,7 +49,7 @@ export async function generateMetadata({
       canonical: canonicalPath,
     },
     openGraph: {
-      title: `${service.title} - ${service.tagline} | Softilo Agency`,
+      title: `${service.title} - ${service.tagline} | Softilo`,
       description: service.shortDesc,
       url: canonicalPath,
       type: "website",
@@ -58,13 +58,13 @@ export async function generateMetadata({
           url: "/logo.jpg",
           width: 800,
           height: 800,
-          alt: `${service.title} | Softilo Agency`,
+          alt: `${service.title} | Softilo`,
         },
       ],
     },
     twitter: {
       card: "summary_large_image",
-      title: `${service.title} | Softilo Agency`,
+      title: `${service.title} | Softilo`,
       description: service.shortDesc,
       images: ["/logo.jpg"],
     },
@@ -94,9 +94,13 @@ export default async function ServiceDetailPage({ params }: PageProps) {
         image: `${SITE_URL}/logo.jpg`,
         provider: {
           "@type": "Organization",
-          name: "Softilo Agency",
+          name: "Softilo",
           url: SITE_URL,
           logo: `${SITE_URL}/logo.jpg`,
+          sameAs: [
+            "https://www.facebook.com/softilo0",
+            "https://www.linkedin.com/company/softilo",
+          ],
         },
         areaServed: {
           "@type": "Country",
@@ -117,19 +121,19 @@ export default async function ServiceDetailPage({ params }: PageProps) {
       },
       ...(service.faq && service.faq.length > 0
         ? [
-            {
-              "@type": "FAQPage",
-              "@id": `${SITE_URL}/services/${service.slug}#faq`,
-              mainEntity: service.faq.map((item) => ({
-                "@type": "Question",
-                name: item.question,
-                acceptedAnswer: {
-                  "@type": "Answer",
-                  text: item.answer,
-                },
-              })),
-            },
-          ]
+          {
+            "@type": "FAQPage",
+            "@id": `${SITE_URL}/services/${service.slug}#faq`,
+            mainEntity: service.faq.map((item) => ({
+              "@type": "Question",
+              name: item.question,
+              acceptedAnswer: {
+                "@type": "Answer",
+                text: item.answer,
+              },
+            })),
+          },
+        ]
         : []),
     ],
   };

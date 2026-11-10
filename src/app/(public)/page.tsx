@@ -2,14 +2,14 @@ import type { Metadata } from "next";
 import { LandingPage } from "@/components/landing/landing-page";
 
 export const metadata: Metadata = {
-  title: "Softilo Agency | Building Brands That Dominate Digitally",
+  title: "Softilo | Building Brands That Dominate Digitally",
   description:
     "Full-stack software engineering, Educational LMS/ERP, Travel Agency ERP, high-impact branding, and digital growth solutions with 2 Years Free Maintenance and Full Software Ownership.",
   alternates: {
     canonical: "/",
   },
   openGraph: {
-    title: "Softilo Agency | Building Brands That Dominate Digitally",
+    title: "Softilo | Building Brands That Dominate Digitally",
     description:
       "Full-stack software engineering, Educational LMS/ERP, Travel Agency ERP, high-impact branding, and digital growth solutions.",
     url: "/",
@@ -18,7 +18,7 @@ export const metadata: Metadata = {
         url: "/logo.jpg",
         width: 800,
         height: 800,
-        alt: "Softilo Agency Logo",
+        alt: "Softilo Logo",
       },
     ],
   },

@@ -22,7 +22,7 @@ export function SoftiloLogo({
   return (
     <Link
       href="/"
-      aria-label="Softilo Agency Home"
+      aria-label="Softilo Home"
       className={`group inline-flex items-center gap-3 ${className}`}
     >
       <span
@@ -30,7 +30,7 @@ export function SoftiloLogo({
       >
         <Image
           src="/logo.jpg"
-          alt="Softilo Agency Logo"
+          alt="Softilo Logo"
           fill
           sizes={`${dimensions.px}px`}
           priority

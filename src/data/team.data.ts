@@ -64,5 +64,14 @@ export const teamData: TeamMember[] = [
       twitter: "",
     },
   },
+  {
+    id: "4",
+    name: "Shawon Devnath",
+    role: "Social Media Manager",
+    image: "/images/team/Shawon-Devnath.png",
+    bio: "Managing Softilo's social media presence through content planning, audience engagement, and performance tracking to strengthen brand visibility and support business growth.",
+    socialUrl: {},
+    
+  },
 
 ];

@@ -2,7 +2,7 @@ import type { MetadataRoute } from "next";
 
 export default function manifest(): MetadataRoute.Manifest {
   return {
-    name: "Softilo Agency — Custom Software, ERP & Digital Growth",
+    name: "Softilo — Custom Software, ERP & Digital Growth",
     short_name: "Softilo",
     description:
       "Enterprise-grade Custom Software, Educational & Travel ERP Systems, Branding, and Digital Growth Solutions.",

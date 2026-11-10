@@ -18,7 +18,7 @@ export const metadata: Metadata = {
     canonical: "/portfolio",
   },
   openGraph: {
-    title: "Portfolio & Case Studies | Softilo Agency",
+    title: "Portfolio & Case Studies | Softilo",
     description:
       "Explore our showcase of digital masterworks across Custom Software, ERP Systems, UI/UX Design, and High-Impact Digital Marketing.",
     url: "/portfolio",
@@ -28,13 +28,13 @@ export const metadata: Metadata = {
         url: "/logo.jpg",
         width: 800,
         height: 800,
-        alt: "Softilo Agency Portfolio",
+        alt: "Softilo Portfolio",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Portfolio & Case Studies | Softilo Agency",
+    title: "Portfolio & Case Studies | Softilo",
     description:
       "Explore our showcase of digital masterworks across Custom Software, ERP Systems, UI/UX Design, and High-Impact Digital Marketing.",
     images: ["/logo.jpg"],
