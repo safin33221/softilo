@@ -96,10 +96,7 @@ function ContactFormInner({ services }: { services: ServiceItem[] }) {
   };
 
   return (
-    <div className="glass-card relative rounded-3xl border border-white/10 p-6 sm:p-10 shadow-2xl bg-surface2/60 backdrop-blur-xl">
-      {/* Background radial highlight */}
-      <div className="absolute top-0 right-0 w-64 h-64 bg-accent-blue/10 rounded-full blur-3xl pointer-events-none" />
-
+    <div className="glass-card relative rounded-3xl border border-[#262038] p-6 sm:p-10 shadow-2xl bg-[#13111c]">
       <AnimatePresence mode="wait">
         {isSubmitted ? (
           <motion.div
@@ -109,7 +106,7 @@ function ContactFormInner({ services }: { services: ServiceItem[] }) {
             exit={{ opacity: 0, scale: 0.95 }}
             className="py-12 text-center"
           >
-            <div className="mx-auto mb-6 flex h-16 w-16 items-center justify-center rounded-2xl bg-gradient-to-br from-emerald-500/20 to-cyan-500/10 border border-emerald-500/30 text-emerald-400">
+            <div className="mx-auto mb-6 flex h-16 w-16 items-center justify-center rounded-2xl bg-[#1c172b] border border-[#32294d] text-[#a855f7]">
               <CheckCircle2 className="h-8 w-8" />
             </div>
 
@@ -348,7 +345,7 @@ function ContactFormInner({ services }: { services: ServiceItem[] }) {
             <button
               type="submit"
               disabled={isSubmitting}
-              className="w-full flex items-center justify-center gap-2 rounded-2xl bg-gradient-to-r from-blue-600 via-indigo-600 to-accent-cyan py-4 text-sm font-bold text-white shadow-lg shadow-blue-500/25 transition-all duration-300 hover:shadow-cyan-500/35 hover:scale-[1.01] active:scale-[0.99] disabled:opacity-50"
+              className="w-full flex items-center justify-center gap-2 rounded-2xl bg-[#7f0bed] py-4 text-sm font-bold text-white transition-all duration-300 hover:bg-[#6a05d5] hover:scale-[1.01] active:scale-[0.99] disabled:opacity-50"
             >
               {isSubmitting ? (
                 <>
@@ -363,8 +360,8 @@ function ContactFormInner({ services }: { services: ServiceItem[] }) {
               )}
             </button>
 
-            <div className="flex items-center justify-center gap-2 text-[11px] text-gray-400 pt-2">
-              <ShieldCheck className="h-3.5 w-3.5 text-emerald-400" />
+            <div className="flex items-center justify-center gap-2 text-[11px] text-slate-300 pt-2">
+              <ShieldCheck className="h-3.5 w-3.5 text-[#a855f7]" />
               <span>Strict Mutual NDA Protected • Zero Spam Policy</span>
             </div>
           </motion.form>
@@ -376,14 +373,7 @@ function ContactFormInner({ services }: { services: ServiceItem[] }) {
 
 export function ContactView({ services }: ContactViewProps) {
   return (
-    <div className="relative min-h-screen bg-background text-white overflow-x-clip selection:bg-accent-blue/30 selection:text-white">
-      {/* Ambient background glows */}
-      <div className="fixed inset-0 pointer-events-none z-0">
-        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[1100px] h-[550px] bg-[radial-gradient(ellipse_at_top,rgba(59,130,246,0.16),transparent_70%)]" />
-        <div className="absolute top-[30%] right-[-10%] w-[600px] h-[600px] bg-[radial-gradient(circle,rgba(168,85,247,0.12),transparent_70%)]" />
-        <div className="absolute bottom-[15%] left-[-10%] w-[600px] h-[600px] bg-[radial-gradient(circle,rgba(0,212,255,0.08),transparent_70%)]" />
-      </div>
-
+    <div className="relative min-h-screen bg-[#0b0912] text-white overflow-x-clip selection:bg-[#7f0bed]/40 selection:text-white">
       <Navbar />
 
       <main className="relative z-10 pt-32 pb-24">
@@ -516,7 +506,7 @@ export function ContactView({ services }: ContactViewProps) {
               </div>
 
               {/* Consultation Guarantee Card */}
-              <div className="glass-card rounded-3xl border border-white/10 p-6 sm:p-8 bg-gradient-to-br from-white/[0.03] to-white/[0.01]">
+              <div className="glass-card rounded-3xl border border-[#262038] p-6 sm:p-8 bg-[#13111c]">
                 <div className="flex items-center gap-3 mb-4">
                   <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">
                     <ShieldCheck className="h-5 w-5" />

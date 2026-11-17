@@ -89,21 +89,20 @@ const services = [
 
 export function Services() {
   return (
-    <section id="services" className="relative py-32">
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(59,130,246,0.12),transparent_60%)]" />
-
+    <section id="services" className="relative bg-[#0b0912] py-28">
       <div className="relative z-10 mx-auto max-w-7xl px-6">
-        <div className="mb-20 text-center">
+        <div className="mb-16 text-center">
+          <span className="mb-4 inline-block rounded-full border border-[#32294d] bg-[#161224] px-4 py-1.5 text-xs font-semibold uppercase tracking-wider text-[#c084fc]">
+            What We Build
+          </span>
+
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="font-display mb-6 text-5xl font-bold md:text-6xl"
+            className="font-display mb-5 text-4xl font-bold text-white md:text-6xl"
           >
-            Premium{" "}
-            <span className="text-gradient-accent">
-              Services
-            </span>
+            Premium <span className="text-[#a855f7]">Services</span>
           </motion.h2>
 
           <motion.p
@@ -111,7 +110,7 @@ export function Services() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.1 }}
-            className="mx-auto max-w-2xl text-xl text-gray-400"
+            className="mx-auto max-w-2xl text-lg leading-relaxed text-slate-300"
           >
             Comprehensive digital solutions tailored for modern businesses
             aiming for growth, automation, and market dominance.
@@ -126,32 +125,26 @@ export function Services() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{
-                duration: 0.5,
-                delay: index * 0.05,
+                duration: 0.45,
+                delay: index * 0.04,
               }}
-              whileHover={{
-                y: -8,
-                scale: 1.02,
-              }}
-              className={`glass-card group relative overflow-hidden rounded-3xl p-8 min-h-[260px] ${service.className}`}
+              className={`group relative overflow-hidden rounded-3xl border border-[#262038] bg-[#13111c] p-8 min-h-[250px] transition-all duration-300 hover:-translate-y-1.5 hover:border-[#7f0bed] hover:bg-[#191626] ${service.className}`}
             >
               <Link href={`/services/${service.slug}`} className="block h-full">
-                <div className="absolute inset-0 bg-gradient-to-br from-accent-blue/20 via-transparent to-accent-purple/20 opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
-
                 <div className="relative z-10 flex h-full flex-col">
-                  <div className="mb-6 flex h-14 w-14 items-center justify-center rounded-2xl bg-white/5 transition-all duration-300 group-hover:scale-110 group-hover:bg-white/10">
-                    <service.icon className="h-7 w-7 text-white" />
+                  <div className="mb-6 flex h-13 w-13 items-center justify-center rounded-2xl border border-[#32294d] bg-[#1c172b] text-[#a855f7] transition-transform duration-300 group-hover:scale-105 group-hover:bg-[#7f0bed] group-hover:text-white">
+                    <service.icon className="h-6 w-6" />
                   </div>
 
-                  <h3 className="font-display mb-4 text-2xl font-bold text-white transition-colors group-hover:text-accent-cyan">
+                  <h3 className="font-display mb-3 text-2xl font-bold text-white transition-colors group-hover:text-[#c084fc]">
                     {service.title}
                   </h3>
 
-                  <p className="leading-relaxed text-gray-400">
+                  <p className="text-base leading-relaxed text-slate-300">
                     {service.desc}
                   </p>
 
-                  <div className="mt-auto pt-6 flex items-center gap-1.5 text-sm font-medium text-accent-cyan transition-transform duration-300 group-hover:translate-x-1">
+                  <div className="mt-auto pt-6 flex items-center gap-1.5 text-sm font-semibold text-[#a855f7] transition-transform duration-300 group-hover:translate-x-1 group-hover:text-[#c084fc]">
                     <span>Explore Service</span>
                     <ArrowRight className="h-4 w-4" />
                   </div>

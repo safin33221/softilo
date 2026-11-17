@@ -21,6 +21,7 @@ import {
   Image as ImageIcon,
 } from "lucide-react";
 import { SoftiloLogo } from "@/components/ui/softilo-logo";
+import { ThemeToggle } from "@/components/ui/theme-toggle";
 
 const DOT_STYLES: { value: DotType; label: string; desc: string }[] = [
   { value: "rounded", label: "Rounded", desc: "Smooth modern edges" },
@@ -47,8 +48,8 @@ export default function QRStudioPage() {
   const [qrUrl, setQrUrl] = useState<string>("https://softilo.vercel.app/go");
   const [originUrl, setOriginUrl] = useState<string>("https://softilo.vercel.app");
   const [dotStyle, setDotStyle] = useState<DotType>("rounded");
-  const [primaryColor, setPrimaryColor] = useState<string>("#080D1A");
-  const [cornerColor, setCornerColor] = useState<string>("#2563EB");
+  const [primaryColor, setPrimaryColor] = useState<string>("#0B0912");
+  const [cornerColor, setCornerColor] = useState<string>("#7F0BED");
   const [bgColor, setBgColor] = useState<string>("#FFFFFF");
   const [isTransparentBg, setIsTransparentBg] = useState<boolean>(false);
   const [logoDataUrl, setLogoDataUrl] = useState<string | undefined>(undefined);
@@ -321,17 +322,18 @@ export default function QRStudioPage() {
           </div>
 
           <div className="flex items-center gap-3">
+            <ThemeToggle />
             <Link
               href="/go"
               target="_blank"
-              className="inline-flex items-center gap-1.5 rounded-lg border border-white/10 bg-white/[0.03] px-3.5 py-2 text-xs font-medium text-slate-300 transition hover:border-accent-cyan/40 hover:text-white"
+              className="inline-flex items-center gap-1.5 rounded-lg border border-[#32294d] bg-[#13111c] px-3.5 py-2 text-xs font-medium text-slate-300 transition hover:border-[#7f0bed] hover:text-white"
             >
-              Test <code className="text-accent-cyan">/go</code> Redirect
+              Test <code className="text-[#a855f7]">/go</code> Redirect
               <ExternalLink className="h-3.5 w-3.5" />
             </Link>
             <Link
               href="/"
-              className="inline-flex items-center gap-1.5 rounded-lg border border-white/10 bg-white/[0.04] px-3.5 py-2 text-xs font-medium text-white transition hover:bg-white/[0.08]"
+              className="inline-flex items-center gap-1.5 rounded-lg border border-[#32294d] bg-[#13111c] px-3.5 py-2 text-xs font-medium text-white transition hover:border-[#7f0bed]"
             >
               <ArrowLeft className="h-3.5 w-3.5" />
               Back to Home
@@ -351,7 +353,7 @@ export default function QRStudioPage() {
             </div>
             <h1 className="text-3xl font-extrabold tracking-tight text-white sm:text-4xl">
               Lifetime Business Card{" "}
-              <span className="bg-gradient-to-r from-white via-accent-cyan to-accent-purple bg-clip-text text-transparent">
+              <span className="text-[#a855f7]">
                 QR Code Studio
               </span>
             </h1>
@@ -759,7 +761,7 @@ export default function QRStudioPage() {
                   type="button"
                   onClick={() => handleDownload("svg")}
                   disabled={!isReady}
-                  className="flex w-full items-center justify-center gap-2.5 rounded-xl bg-gradient-to-r from-accent-blue via-accent-cyan to-accent-purple px-5 py-3.5 text-sm font-bold text-white shadow-lg shadow-accent-blue/20 transition hover:opacity-95 disabled:opacity-50 cursor-pointer"
+                  className="flex w-full items-center justify-center gap-2.5 rounded-xl bg-[#7f0bed] px-5 py-3.5 text-sm font-bold text-white transition hover:bg-[#6a05d5] disabled:opacity-50 cursor-pointer"
                 >
                   <Download className="h-4 w-4" />
                   Download SVG (Vector for Print)

@@ -41,7 +41,7 @@ export function SoftiloLogo({
         <span
           className={`font-display ${dimensions.text} font-bold tracking-tighter text-white`}
         >
-          SOFTILO<span className="text-sky-400">.</span>
+          SOFTILO<span className="text-[#9010FE]">.</span>
         </span>
       )}
     </Link>

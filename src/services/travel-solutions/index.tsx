@@ -10,141 +10,72 @@ import {
   KeyRound,
   ArrowRight,
   Plane,
-  Compass,
   FileCheck2,
   TrendingUp,
+  Compass,
 } from "lucide-react";
 
 /* -------------------------------------------------------------------------- */
-/*  1. 3D CYBERPUNK TRAVEL GRID & FLIGHT-ROUTE NODE TRACKING BACKGROUND       */
+/*  1. SOLID BRAND PURPLE GEOMETRIC GRID FOR TRAVEL                           */
 /* -------------------------------------------------------------------------- */
 
 const FLIGHT_NODES = [
-  { top: "24%", left: "16%", label: "DAC", delay: 0 },
-  { top: "18%", left: "48%", label: "JED", delay: 1.1 },
-  { top: "30%", left: "82%", label: "DXB", delay: 2.2 },
-  { top: "68%", left: "22%", label: "KUL", delay: 0.7 },
-  { top: "64%", left: "76%", label: "SIN", delay: 1.6 },
+  { top: "16%", left: "14%", delay: 0 },
+  { top: "24%", left: "48%", delay: 1.1 },
+  { top: "62%", left: "16%", delay: 0.6 },
+  { top: "20%", left: "84%", delay: 1.8 },
+  { top: "70%", left: "54%", delay: 1.4 },
+  { top: "56%", left: "86%", delay: 0.4 },
 ];
 
 export function TravelGridBackground() {
   return (
     <div
       aria-hidden="true"
-      className="pointer-events-none absolute inset-0 overflow-hidden bg-[#0a0a0f]"
+      className="pointer-events-none absolute inset-0 overflow-hidden bg-[#0b0912]"
     >
-      {/* Subtle 2D Coordinate Grid in Softilo Brand Blue & Violet */}
+      {/* 2D Geometric Grid Mesh */}
       <div
         className="absolute inset-0"
         style={{
           backgroundImage: `
-            linear-gradient(to right, rgba(59, 130, 246, 0.055) 1px, transparent 1px),
-            linear-gradient(to bottom, rgba(168, 85, 247, 0.045) 1px, transparent 1px)
+            linear-gradient(to right, rgba(127, 11, 237, 0.08) 1px, transparent 1px),
+            linear-gradient(to bottom, rgba(127, 11, 237, 0.08) 1px, transparent 1px)
           `,
           backgroundSize: "64px 64px",
-          maskImage:
-            "radial-gradient(ellipse 90% 80% at 50% 45%, #000 30%, transparent 90%)",
-          WebkitMaskImage:
-            "radial-gradient(ellipse 90% 80% at 50% 45%, #000 30%, transparent 90%)",
         }}
       />
 
-      {/* Faint Glowing Flight Route Arcs (Electric Blue, Cyan & Violet) */}
-      <svg
-        className="absolute inset-0 h-full w-full opacity-35"
-        viewBox="0 0 1200 600"
-        fill="none"
-        preserveAspectRatio="none"
-      >
-        <defs>
-          <linearGradient id="flightRoute1" x1="0%" y1="0%" x2="100%" y2="0%">
-            <stop offset="0%" stopColor="rgba(59,130,246,0)" />
-            <stop offset="45%" stopColor="rgba(0,212,255,0.65)" />
-            <stop offset="80%" stopColor="rgba(168,85,247,0.7)" />
-            <stop offset="100%" stopColor="rgba(168,85,247,0)" />
-          </linearGradient>
-          <linearGradient id="flightRoute2" x1="0%" y1="0%" x2="100%" y2="0%">
-            <stop offset="0%" stopColor="rgba(168,85,247,0)" />
-            <stop offset="50%" stopColor="rgba(59,130,246,0.65)" />
-            <stop offset="100%" stopColor="rgba(0,212,255,0)" />
-          </linearGradient>
-        </defs>
-        <path
-          d="M 120 180 Q 560 40 1020 200"
-          stroke="url(#flightRoute1)"
-          strokeWidth="1.5"
-          strokeDasharray="6 6"
-        />
-        <path
-          d="M 220 420 Q 620 240 960 390"
-          stroke="url(#flightRoute2)"
-          strokeWidth="1.5"
-          strokeDasharray="5 7"
-        />
-      </svg>
-
-      {/* Node-Based Tracking Dots (Airport / Route Connectors) */}
-      {FLIGHT_NODES.map((node) => (
+      {/* Node-Based Tracking Dots */}
+      {FLIGHT_NODES.map((node, index) => (
         <div
-          key={node.label}
+          key={index}
           style={{ top: node.top, left: node.left }}
-          className="absolute hidden sm:flex items-center gap-1.5 -translate-x-1/2 -translate-y-1/2"
+          className="absolute -translate-x-1/2 -translate-y-1/2"
         >
-          <span className="relative flex h-2.5 w-2.5">
-            <motion.span
-              animate={{ scale: [1, 2.2, 1], opacity: [0.3, 0.8, 0.3] }}
-              transition={{
-                duration: 3.2,
-                repeat: Infinity,
-                delay: node.delay,
-                ease: "easeInOut",
-              }}
-              style={{ willChange: "transform, opacity" }}
-              className="absolute inline-flex h-full w-full rounded-full bg-accent-cyan/50"
-            />
-            <span className="relative inline-flex h-2.5 w-2.5 rounded-full bg-accent-cyan shadow-[0_0_8px_rgba(0,212,255,0.9)]" />
-          </span>
-          <span className="font-mono text-[10px] font-semibold tracking-wider text-slate-500">
-            {node.label}
-          </span>
+          <motion.span
+            animate={{
+              scale: [1, 2.2, 1],
+              opacity: [0.25, 0.75, 0.25],
+            }}
+            transition={{
+              duration: 3.4,
+              repeat: Infinity,
+              delay: node.delay,
+              ease: "easeInOut",
+            }}
+            style={{ willChange: "transform, opacity" }}
+            className="block h-3.5 w-3.5 rounded-full border border-[#a855f7]/45"
+          />
+          <span className="absolute inset-1 rounded-full bg-[#a855f7]" />
         </div>
       ))}
-
-      {/* 3D Perspective Grid Horizon */}
-      <div
-        className="absolute inset-x-0 bottom-0 h-[48%] overflow-hidden"
-        style={{
-          perspective: "1000px",
-          maskImage:
-            "radial-gradient(ellipse 85% 70% at 50% 40%, #000 15%, transparent 75%)",
-          WebkitMaskImage:
-            "radial-gradient(ellipse 85% 70% at 50% 40%, #000 15%, transparent 75%)",
-        }}
-      >
-        <div
-          style={{
-            transform: "rotateX(60deg) scale(1.7) translateY(10%)",
-            transformOrigin: "center top",
-            willChange: "transform",
-            backgroundImage: `
-              linear-gradient(to right, rgba(0, 212, 255, 0.12) 1px, transparent 1px),
-              linear-gradient(to bottom, rgba(168, 85, 247, 0.1) 1px, transparent 1px)
-            `,
-            backgroundSize: "56px 56px",
-          }}
-          className="h-full w-full"
-        />
-      </div>
-
-      {/* Vignette Edges */}
-      <div className="absolute inset-x-0 top-0 h-24 bg-gradient-to-b from-[#0a0a0f] to-transparent" />
-      <div className="absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-[#0a0a0f] via-[#0a0a0f]/85 to-transparent" />
     </div>
   );
 }
 
 /* -------------------------------------------------------------------------- */
-/*  2. GLASSMORPHIC TRAVEL OPERATIONS SNAPSHOTS (3 COMPACT CARDS)             */
+/*  2. OPERATIONAL DASHBOARD SNAPSHOTS (SOLID CARDS)                          */
 /* -------------------------------------------------------------------------- */
 
 export function TravelDashboardSnapshots() {
@@ -155,23 +86,23 @@ export function TravelDashboardSnapshots() {
         initial={{ opacity: 0, y: 16 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
-        className="rounded-2xl border border-white/10 bg-[#0b0f1d]/85 p-5 backdrop-blur-xl"
+        className="rounded-2xl border border-[#262038] bg-[#13111c] p-5"
       >
         <div className="flex items-center justify-between mb-3">
           <div className="flex items-center gap-2.5">
-            <div className="flex h-9 w-9 items-center justify-center rounded-xl bg-accent-blue/15 text-accent-cyan border border-accent-blue/30">
+            <div className="flex h-9 w-9 items-center justify-center rounded-xl bg-[#1c172b] text-[#a855f7] border border-[#32294d]">
               <Plane className="h-4 w-4" />
             </div>
             <span className="text-sm font-bold text-white">
               Flight &amp; Hajj Booking
             </span>
           </div>
-          <span className="inline-flex items-center gap-1.5 rounded-full border border-accent-cyan/30 bg-accent-cyan/10 px-2.5 py-0.5 text-[10px] font-bold text-accent-cyan">
-            <span className="h-1.5 w-1.5 rounded-full bg-accent-cyan animate-pulse" />
+          <span className="inline-flex items-center gap-1.5 rounded-full border border-[#32294d] bg-[#1c172b] px-2.5 py-0.5 text-[10px] font-bold text-[#c084fc]">
+            <span className="h-1.5 w-1.5 rounded-full bg-[#a855f7] animate-pulse" />
             Hajj/Tour Tracking Active
           </span>
         </div>
-        <div className="flex items-baseline justify-between pt-2 border-t border-white/10 text-xs text-gray-400">
+        <div className="flex items-baseline justify-between pt-2 border-t border-[#262038] text-xs text-slate-300">
           <span>Active Pilgrims &amp; Travelers</span>
           <span className="font-display text-lg font-extrabold text-white">
             1,420+ Seats
@@ -185,24 +116,24 @@ export function TravelDashboardSnapshots() {
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ delay: 0.08 }}
-        className="rounded-2xl border border-white/10 bg-[#0b0f1d]/85 p-5 backdrop-blur-xl"
+        className="rounded-2xl border border-[#262038] bg-[#13111c] p-5"
       >
         <div className="flex items-center justify-between mb-3">
           <div className="flex items-center gap-2.5">
-            <div className="flex h-9 w-9 items-center justify-center rounded-xl bg-accent-blue/15 text-accent-blue border border-accent-blue/30">
+            <div className="flex h-9 w-9 items-center justify-center rounded-xl bg-[#1c172b] text-[#a855f7] border border-[#32294d]">
               <FileCheck2 className="h-4 w-4" />
             </div>
             <span className="text-sm font-bold text-white">
               Passport &amp; Visa Tracker
             </span>
           </div>
-          <span className="inline-flex items-center gap-1.5 rounded-full border border-accent-blue/30 bg-accent-blue/10 px-2.5 py-0.5 text-[10px] font-bold text-blue-300">
+          <span className="inline-flex items-center gap-1.5 rounded-full border border-[#32294d] bg-[#1c172b] px-2.5 py-0.5 text-[10px] font-bold text-[#c084fc]">
             Automated Ledger Active
           </span>
         </div>
-        <div className="flex items-baseline justify-between pt-2 border-t border-white/10 text-xs text-gray-400">
+        <div className="flex items-baseline justify-between pt-2 border-t border-[#262038] text-xs text-slate-300">
           <span>Live SMS &amp; Embassy Sync</span>
-          <span className="font-display text-lg font-extrabold text-accent-cyan">
+          <span className="font-display text-lg font-extrabold text-[#a855f7]">
             99.6% Cleared
           </span>
         </div>
@@ -214,22 +145,22 @@ export function TravelDashboardSnapshots() {
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ delay: 0.16 }}
-        className="rounded-2xl border border-white/10 bg-[#0b0f1d]/85 p-5 backdrop-blur-xl"
+        className="rounded-2xl border border-[#262038] bg-[#13111c] p-5"
       >
         <div className="flex items-center justify-between mb-3">
           <div className="flex items-center gap-2.5">
-            <div className="flex h-9 w-9 items-center justify-center rounded-xl bg-accent-purple/15 text-accent-purple border border-accent-purple/30">
+            <div className="flex h-9 w-9 items-center justify-center rounded-xl bg-[#1c172b] text-[#a855f7] border border-[#32294d]">
               <TrendingUp className="h-4 w-4" />
             </div>
             <span className="text-sm font-bold text-white">
               Booking Leads Engine
             </span>
           </div>
-          <span className="rounded-full border border-accent-purple/30 bg-accent-purple/15 px-2.5 py-0.5 text-[10px] font-bold text-violet-300">
+          <span className="rounded-full border border-[#32294d] bg-[#1c172b] px-2.5 py-0.5 text-[10px] font-bold text-[#c084fc]">
             +324% Bookings
           </span>
         </div>
-        <div className="flex items-baseline justify-between pt-2 border-t border-white/10 text-xs text-gray-400">
+        <div className="flex items-baseline justify-between pt-2 border-t border-[#262038] text-xs text-slate-300">
           <span>bKash / Nagad Instant Checkout</span>
           <span className="font-display text-lg font-extrabold text-white">
             3.2x ROI
@@ -330,9 +261,8 @@ export function TravelPricingSection() {
   return (
     <section
       id="pricing"
-      className="relative py-24 overflow-hidden border-y border-white/5"
+      className="relative py-24 overflow-hidden border-y border-[#262038] bg-[#0b0912]"
     >
-      {/* Dynamic 3D Cyberpunk Flight Grid Background */}
       <TravelGridBackground />
 
       <div className="relative z-10 mx-auto max-w-7xl px-6">
@@ -342,9 +272,9 @@ export function TravelPricingSection() {
             initial={{ opacity: 0, y: 10 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="inline-flex items-center gap-2 rounded-full border border-accent-blue/30 bg-accent-blue/10 px-4 py-1 text-xs font-bold uppercase tracking-widest text-accent-cyan mb-4"
+            className="inline-flex items-center gap-2 rounded-full border border-[#32294d] bg-[#161224] px-4 py-1.5 text-xs font-bold uppercase tracking-widest text-[#c084fc] mb-4"
           >
-            <Compass className="h-3.5 w-3.5 text-accent-cyan" />
+            <Compass className="h-3.5 w-3.5 text-[#a855f7]" />
             <span>Travel Agency Digital Solutions &amp; ERP</span>
           </motion.span>
 
@@ -355,7 +285,7 @@ export function TravelPricingSection() {
             className="font-display text-4xl sm:text-5xl font-bold text-white mb-4"
           >
             Automate Bookings.{" "}
-            <span className="text-gradient-accent">
+            <span className="text-[#a855f7]">
               Own Your Software in 2 Years.
             </span>
           </motion.h2>
@@ -365,13 +295,13 @@ export function TravelPricingSection() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.05 }}
-            className="text-gray-400 text-base sm:text-lg"
+            className="text-slate-300 text-base sm:text-lg"
           >
             Complete booking engine, visa tracking, agent accounting, and creative media bundled for travel agencies.
           </motion.p>
         </div>
 
-        {/* 3 Compact Glassmorphic Operational Snapshots */}
+        {/* 3 Compact Operational Snapshots */}
         <TravelDashboardSnapshots />
 
         {/* Sleek 2-Column Ownership & Zero Maintenance Callout */}
@@ -381,29 +311,29 @@ export function TravelPricingSection() {
           viewport={{ once: true }}
           className="mx-auto max-w-4xl mb-16 grid grid-cols-1 sm:grid-cols-2 gap-4"
         >
-          <div className="flex items-center gap-4 rounded-2xl border border-blue-500/25 bg-blue-500/[0.06] px-5 py-4 backdrop-blur-md">
-            <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-blue-500/15 text-blue-400 border border-blue-500/30">
+          <div className="flex items-center gap-4 rounded-2xl border border-[#32294d] bg-[#13111c] px-5 py-4">
+            <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-[#1c172b] text-[#a855f7] border border-[#32294d]">
               <KeyRound className="h-5 w-5" />
             </div>
             <div>
               <div className="text-sm font-bold text-white">
                 2-Year Software Ownership Hand-Over
               </div>
-              <div className="text-xs text-gray-400">
+              <div className="text-xs text-slate-300">
                 Continuous 2-year subscription grants 100% software ownership
               </div>
             </div>
           </div>
 
-          <div className="flex items-center gap-4 rounded-2xl border border-violet-500/25 bg-violet-500/[0.06] px-5 py-4 backdrop-blur-md">
-            <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-violet-500/15 text-violet-400 border border-violet-500/30">
+          <div className="flex items-center gap-4 rounded-2xl border border-[#32294d] bg-[#13111c] px-5 py-4">
+            <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-[#1c172b] text-[#a855f7] border border-[#32294d]">
               <ShieldCheck className="h-5 w-5" />
             </div>
             <div>
               <div className="text-sm font-bold text-white">
                 2 Years Zero Maintenance Fee
               </div>
-              <div className="text-xs text-gray-400">
+              <div className="text-xs text-slate-300">
                 Saves ৳2,000–৳3,000 monthly default maintenance charges
               </div>
             </div>
@@ -424,17 +354,17 @@ export function TravelPricingSection() {
                 transition={{ duration: 0.4, delay: index * 0.08 }}
                 className={`relative flex flex-col rounded-3xl p-8 transition-all duration-300 hover:-translate-y-1.5 ${
                   isPopular
-                    ? "border border-blue-500/60 bg-gradient-to-b from-blue-950/40 via-[#0d1222] to-[#0a0c14] shadow-[0_0_50px_-12px_rgba(59,130,246,0.4)] lg:-translate-y-4"
-                    : "border border-white/10 bg-white/[0.02] hover:border-white/20 backdrop-blur-xl"
+                    ? "border-2 border-[#7f0bed] bg-[#191626] lg:-translate-y-4"
+                    : "border border-[#262038] bg-[#13111c] hover:border-[#7f0bed]"
                 }`}
               >
                 {/* Spotlight Badge */}
                 {tier.badge && (
                   <div
-                    className={`absolute -top-3.5 left-1/2 -translate-x-1/2 rounded-full px-4 py-1 text-xs font-bold uppercase tracking-wider text-white shadow-lg ${
+                    className={`absolute -top-3.5 left-1/2 -translate-x-1/2 rounded-full px-4 py-1 text-xs font-bold uppercase tracking-wider text-white ${
                       isPopular
-                        ? "bg-gradient-to-r from-blue-600 to-violet-600 shadow-blue-500/30"
-                        : "border border-white/15 bg-[#111118] text-gray-300"
+                        ? "bg-[#7f0bed]"
+                        : "border border-[#32294d] bg-[#1c172b] text-[#c084fc]"
                     }`}
                   >
                     {tier.badge}
@@ -446,18 +376,18 @@ export function TravelPricingSection() {
                   <h3 className="font-display text-2xl font-bold text-white mb-1">
                     {tier.name}
                   </h3>
-                  <p className="text-sm text-gray-400">{tier.target}</p>
+                  <p className="text-sm text-slate-300">{tier.target}</p>
                 </div>
 
                 {/* Price */}
-                <div className="mb-8 pb-6 border-b border-white/10">
+                <div className="mb-8 pb-6 border-b border-[#262038]">
                   <div className="flex items-baseline gap-1.5">
                     <span className="font-display text-4xl sm:text-5xl font-extrabold text-white">
                       {tier.annualPrice}
                     </span>
-                    <span className="text-sm text-gray-400">/ Year</span>
+                    <span className="text-sm text-slate-300">/ Year</span>
                   </div>
-                  <p className="text-xs text-accent-cyan mt-2 font-medium">
+                  <p className="text-xs text-[#c084fc] mt-2 font-medium">
                     {tier.monthlyNote}
                   </p>
                 </div>
@@ -469,22 +399,16 @@ export function TravelPricingSection() {
                       key={item.text}
                       className={`flex items-start gap-3 text-sm ${
                         item.included
-                          ? "text-gray-300"
-                          : "text-gray-600 line-through"
+                          ? "text-slate-300"
+                          : "text-slate-600 line-through"
                       }`}
                     >
                       {item.included ? (
-                        <div
-                          className={`mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full ${
-                            item.highlight
-                              ? "bg-accent-cyan/20 text-accent-cyan"
-                              : "bg-blue-500/15 text-blue-400"
-                          }`}
-                        >
+                        <div className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-[#1c172b] border border-[#32294d] text-[#a855f7]">
                           <Check className="h-3 w-3" />
                         </div>
                       ) : (
-                        <div className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-white/5 text-gray-600">
+                        <div className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-[#1c172b] text-slate-600">
                           <Minus className="h-3 w-3" />
                         </div>
                       )}
@@ -506,10 +430,10 @@ export function TravelPricingSection() {
                   href={`/contact?service=travel-solutions&package=${encodeURIComponent(
                     `${tier.name} (${tier.annualPrice}/Year)`
                   )}`}
-                  className={`group inline-flex w-full items-center justify-center gap-2 rounded-full py-4 text-sm font-semibold transition-all duration-300 ${
+                  className={`group inline-flex w-full items-center justify-center gap-2 rounded-full py-4 text-sm font-bold transition-all duration-300 ${
                     isPopular
-                      ? "bg-white text-black hover:bg-gray-200 shadow-lg shadow-blue-500/20"
-                      : "border border-white/15 bg-white/[0.06] text-white hover:bg-white/15"
+                      ? "bg-[#7f0bed] text-white hover:bg-[#6a05d5]"
+                      : "border border-[#32294d] bg-[#1c172b] text-white hover:border-[#7f0bed] hover:bg-[#7f0bed]"
                   }`}
                 >
                   <span>{tier.ctaLabel}</span>

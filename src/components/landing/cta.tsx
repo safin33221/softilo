@@ -1,43 +1,49 @@
+import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import { motion } from "framer-motion";
 
 export function CTA() {
   return (
-    <section id="cta" className="relative overflow-hidden py-32">
-      <div className="absolute inset-0 bg-surface2">
-        <div className="animate-blob absolute left-1/4 top-0 h-full w-1/2 bg-accent-blue/20 blur-[150px]" />
-        <div className="animate-blob animation-delay-2000 absolute bottom-0 right-1/4 h-full w-1/2 bg-accent-purple/20 blur-[150px]" />
-      </div>
-
+    <section
+      id="cta"
+      className="relative overflow-hidden border-t border-[#262038] bg-[#0e0c17] py-28"
+    >
       <div className="relative z-10 mx-auto max-w-5xl px-6 text-center">
         <motion.div
-          initial={{ opacity: 0, scale: 0.9 }}
-          whileInView={{ opacity: 1, scale: 1 }}
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-          className="glass-card relative overflow-hidden rounded-[3rem] border-white/10 p-12 shadow-2xl md:p-24"
+          transition={{ duration: 0.6 }}
+          className="relative overflow-hidden rounded-3xl border border-[#262038] bg-[#13111c] p-12 md:p-20"
         >
-          <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGNpcmNsZSBjeD0iMSIgY3k9IjEiIHI9IjEiIGZpbGw9InJnYmEoMjU1LDI1NSwyNTUsMC4wNSkiLz48L3N2Zz4=')] opacity-30" />
+          <span className="mb-4 inline-block rounded-full border border-[#32294d] bg-[#1c172b] px-4 py-1.5 text-xs font-semibold uppercase tracking-wider text-[#c084fc]">
+            Start Your Project
+          </span>
 
-          <h2 className="font-display relative z-10 mb-6 text-5xl font-bold leading-tight md:text-7xl">
-            Ready to Scale Your{" "}
-            <span className="text-gradient-accent">Brand?</span>
+          <h2 className="font-display relative z-10 mb-5 text-4xl font-bold leading-tight text-white md:text-6xl">
+            Ready to Scale Your <span className="text-[#a855f7]">Brand?</span>
           </h2>
 
-          <p className="relative z-10 mx-auto mb-10 max-w-2xl text-xl text-gray-400">
-            Let Softilo turn your business into a powerful digital brand.
-            Book a free strategy call today.
+          <p className="relative z-10 mx-auto mb-10 max-w-2xl text-lg leading-relaxed text-slate-300">
+            Let Softilo turn your business into a high-performing digital brand with custom software, ERP automation, and strategic growth.
           </p>
 
-          <motion.a
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-            href="mailto:hello.softilo@gmail.com"
-            className="group relative z-10 mx-auto flex w-fit items-center gap-3 rounded-full bg-white px-10 py-5 text-lg font-bold text-black transition-all hover:shadow-[0_0_40px_-10px_rgba(59,130,246,0.3)]"
-          >
-            Book Free Consultation
-            <ArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-1" />
-          </motion.a>
+          <div className="relative z-10 flex flex-wrap items-center justify-center gap-4">
+            <Link
+              href="/contact"
+              className="group inline-flex items-center gap-3 rounded-2xl bg-[#7f0bed] px-8 py-4 text-base font-bold text-white transition-all hover:bg-[#6a05d5]"
+            >
+              <span>Book Free Consultation</span>
+              <ArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-1" />
+            </Link>
+
+            <a
+              href="mailto:hello.softilo@gmail.com"
+              className="inline-flex items-center gap-2 rounded-2xl border border-[#32294d] bg-[#1c172b] px-7 py-4 text-base font-semibold text-slate-200 transition-all hover:border-[#7f0bed] hover:text-white"
+            >
+              <span>hello.softilo@gmail.com</span>
+            </a>
+          </div>
         </motion.div>
       </div>
     </section>

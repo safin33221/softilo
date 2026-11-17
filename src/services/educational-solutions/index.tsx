@@ -11,16 +11,16 @@ import {
 } from "lucide-react";
 
 /* -------------------------------------------------------------------------- */
-/*  1. IMMERSIVE CYBERPUNK GRID & 3D PERSPECTIVE MATRIX BACKGROUND            */
+/*  1. SOLID BRAND PURPLE GEOMETRIC GRID & 3D PERSPECTIVE BACKGROUND          */
 /* -------------------------------------------------------------------------- */
 
 const DATA_NODES = [
-  { top: "18%", left: "12%", delay: 0, color: "bg-sky-400", ring: "border-sky-400/40" },
-  { top: "28%", left: "44%", delay: 1.4, color: "bg-violet-400", ring: "border-violet-400/40" },
-  { top: "64%", left: "18%", delay: 0.8, color: "bg-blue-400", ring: "border-blue-400/40" },
-  { top: "22%", left: "82%", delay: 2.1, color: "bg-sky-300", ring: "border-sky-300/40" },
-  { top: "72%", left: "52%", delay: 1.7, color: "bg-violet-400", ring: "border-violet-400/40" },
-  { top: "58%", left: "88%", delay: 0.5, color: "bg-cyan-400", ring: "border-cyan-400/40" },
+  { top: "18%", left: "12%", delay: 0 },
+  { top: "28%", left: "44%", delay: 1.4 },
+  { top: "64%", left: "18%", delay: 0.8 },
+  { top: "22%", left: "82%", delay: 2.1 },
+  { top: "72%", left: "52%", delay: 1.7 },
+  { top: "58%", left: "88%", delay: 0.5 },
 ];
 
 const CROSSHAIR_COORDS = [
@@ -35,88 +35,44 @@ export function CyberGridBackground() {
   return (
     <div
       aria-hidden="true"
-      className="pointer-events-none absolute inset-0 overflow-hidden bg-[#0a0a0c]"
+      className="pointer-events-none absolute inset-0 overflow-hidden bg-[#0b0912]"
     >
-      {/* 1. Primary 2D Geometric Grid Mesh (64px x 64px) with Radial Vignette Mask */}
+      {/* 1. Primary 2D Geometric Grid Mesh (64px x 64px) in Brand Purple */}
       <div
         className="absolute inset-0"
         style={{
           backgroundImage: `
-            linear-gradient(to right, rgba(56, 189, 248, 0.055) 1px, transparent 1px),
-            linear-gradient(to bottom, rgba(139, 92, 246, 0.045) 1px, transparent 1px)
+            linear-gradient(to right, rgba(127, 11, 237, 0.09) 1px, transparent 1px),
+            linear-gradient(to bottom, rgba(127, 11, 237, 0.09) 1px, transparent 1px)
           `,
           backgroundSize: "64px 64px",
-          maskImage:
-            "radial-gradient(ellipse 90% 80% at 50% 38%, #000 35%, transparent 92%)",
-          WebkitMaskImage:
-            "radial-gradient(ellipse 90% 80% at 50% 38%, #000 35%, transparent 92%)",
         }}
       />
 
       {/* 2. Fine Sub-Grid Micro Mesh (16px x 16px) */}
       <div
-        className="absolute inset-0 opacity-60"
+        className="absolute inset-0 opacity-50"
         style={{
           backgroundImage: `
-            linear-gradient(to right, rgba(255, 255, 255, 0.014) 1px, transparent 1px),
-            linear-gradient(to bottom, rgba(255, 255, 255, 0.014) 1px, transparent 1px)
+            linear-gradient(to right, rgba(168, 85, 247, 0.025) 1px, transparent 1px),
+            linear-gradient(to bottom, rgba(168, 85, 247, 0.025) 1px, transparent 1px)
           `,
           backgroundSize: "16px 16px",
-          maskImage:
-            "radial-gradient(ellipse 70% 60% at 50% 35%, #000 20%, transparent 80%)",
-          WebkitMaskImage:
-            "radial-gradient(ellipse 70% 60% at 50% 35%, #000 20%, transparent 80%)",
         }}
       />
 
-      {/* 3. Intersection Dot Matrix Pattern at 64px Cross-Sections */}
-      <div
-        className="absolute inset-0"
-        style={{
-          backgroundImage:
-            "radial-gradient(circle, rgba(56, 189, 248, 0.26) 1px, transparent 1.5px)",
-          backgroundSize: "64px 64px",
-          maskImage:
-            "radial-gradient(ellipse 80% 70% at 50% 40%, #000 25%, transparent 85%)",
-          WebkitMaskImage:
-            "radial-gradient(ellipse 80% 70% at 50% 40%, #000 25%, transparent 85%)",
-        }}
-      />
-
-      {/* 4. Coordinate '+' Marks at Select Grid Intersections */}
+      {/* 3. Coordinate '+' Marks at Select Grid Intersections */}
       {CROSSHAIR_COORDS.map((coord, idx) => (
         <div
           key={idx}
           style={{ top: coord.top, left: coord.left }}
-          className="absolute hidden md:flex items-center justify-center -translate-x-1/2 -translate-y-1/2 text-sky-400/35 select-none"
+          className="absolute hidden md:flex items-center justify-center -translate-x-1/2 -translate-y-1/2 text-[#a855f7]/45 select-none"
         >
-          <span className="font-mono text-xs leading-none drop-shadow-[0_0_6px_rgba(56,189,248,0.4)]">
-            +
-          </span>
+          <span className="font-mono text-xs leading-none">+</span>
         </div>
       ))}
 
-      {/* 5. Sharp Laser Trace Lines Running Along Grid Tracks */}
-      <motion.div
-        animate={{ x: ["-20%", "120%"], opacity: [0, 1, 1, 0] }}
-        transition={{ duration: 7, repeat: Infinity, ease: "linear" }}
-        style={{ willChange: "transform, opacity" }}
-        className="absolute top-[192px] left-0 h-px w-72 bg-gradient-to-r from-transparent via-sky-400/75 to-transparent shadow-[0_0_12px_rgba(56,189,248,0.65)]"
-      />
-      <motion.div
-        animate={{ x: ["120%", "-20%"], opacity: [0, 0.9, 0.9, 0] }}
-        transition={{ duration: 9, repeat: Infinity, ease: "linear", delay: 2 }}
-        style={{ willChange: "transform, opacity" }}
-        className="absolute top-[384px] left-0 h-px w-80 bg-gradient-to-r from-transparent via-violet-400/70 to-transparent shadow-[0_0_12px_rgba(139,92,246,0.6)]"
-      />
-      <motion.div
-        animate={{ y: ["-20%", "110%"], opacity: [0, 0.85, 0.85, 0] }}
-        transition={{ duration: 8, repeat: Infinity, ease: "linear", delay: 1 }}
-        style={{ willChange: "transform, opacity" }}
-        className="absolute top-0 left-[38%] hidden lg:block w-px h-64 bg-gradient-to-b from-transparent via-blue-400/70 to-transparent shadow-[0_0_10px_rgba(59,130,246,0.6)]"
-      />
-
-      {/* 6. Ambient Pulsing Data Nodes */}
+      {/* 4. Ambient Pulsing Data Nodes in Solid Logo Purple */}
       {DATA_NODES.map((node, index) => (
         <div
           key={index}
@@ -135,23 +91,17 @@ export function CyberGridBackground() {
               ease: "easeInOut",
             }}
             style={{ willChange: "transform, opacity" }}
-            className={`block h-3.5 w-3.5 rounded-full border ${node.ring}`}
+            className="block h-3.5 w-3.5 rounded-full border border-[#a855f7]/50"
           />
-          <span
-            className={`absolute inset-1 rounded-full ${node.color} shadow-[0_0_10px_rgba(56,189,248,0.8)]`}
-          />
+          <span className="absolute inset-1 rounded-full bg-[#a855f7]" />
         </div>
       ))}
 
-      {/* 7. 3D Perspective Grid Floor & Matrix (Depth Horizon) */}
+      {/* 5. 3D Perspective Grid Floor */}
       <div
-        className="absolute inset-x-0 bottom-0 h-[54%] overflow-hidden"
+        className="absolute inset-x-0 bottom-0 h-[48%] overflow-hidden opacity-45"
         style={{
           perspective: "1000px",
-          maskImage:
-            "radial-gradient(ellipse 85% 75% at 50% 35%, #000 15%, transparent 75%)",
-          WebkitMaskImage:
-            "radial-gradient(ellipse 85% 75% at 50% 35%, #000 15%, transparent 75%)",
         }}
       >
         <div
@@ -160,26 +110,20 @@ export function CyberGridBackground() {
             transformOrigin: "center top",
             willChange: "transform",
             backgroundImage: `
-              linear-gradient(to right, rgba(56, 189, 248, 0.14) 1px, transparent 1px),
-              linear-gradient(to bottom, rgba(139, 92, 246, 0.12) 1px, transparent 1px)
+              linear-gradient(to right, rgba(127, 11, 237, 0.2) 1px, transparent 1px),
+              linear-gradient(to bottom, rgba(127, 11, 237, 0.2) 1px, transparent 1px)
             `,
             backgroundSize: "56px 56px",
           }}
           className="h-full w-full"
         />
       </div>
-
-      {/* 8. Deep Vignette Edge & Floor Fade into #0a0a0c */}
-      <div className="absolute inset-x-0 top-0 h-28 bg-gradient-to-b from-[#0a0a0c] to-transparent" />
-      <div className="absolute inset-x-0 bottom-0 h-36 bg-gradient-to-t from-[#0a0a0c] via-[#0a0a0c]/85 to-transparent" />
-      <div className="absolute inset-y-0 left-0 w-16 sm:w-28 bg-gradient-to-r from-[#0a0a0c] to-transparent" />
-      <div className="absolute inset-y-0 right-0 w-16 sm:w-28 bg-gradient-to-l from-[#0a0a0c] to-transparent" />
     </div>
   );
 }
 
 /* -------------------------------------------------------------------------- */
-/*  2. CLEAN, LIGHTWEIGHT PRICING & PACKAGES SECTION                          */
+/*  2. CLEAN, LIGHTWEIGHT PRICING & PACKAGES SECTION (SOLID BRAND PURPLE)     */
 /* -------------------------------------------------------------------------- */
 
 export interface EducationalPricingTier {
@@ -250,7 +194,7 @@ export const EDUCATIONAL_PRICING_TIERS: EducationalPricingTier[] = [
 
 export function EducationalPricingSection() {
   return (
-    <section id="pricing" className="relative py-24 overflow-hidden">
+    <section id="pricing" className="relative py-24 overflow-hidden bg-[#0b0912]">
       <div className="relative z-10 mx-auto max-w-7xl px-6">
         {/* Clean, Scannable Header */}
         <div className="mx-auto max-w-2xl text-center mb-12">
@@ -258,7 +202,7 @@ export function EducationalPricingSection() {
             initial={{ opacity: 0, y: 10 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="inline-block text-xs font-bold uppercase tracking-widest text-accent-cyan mb-3"
+            className="inline-block rounded-full border border-[#32294d] bg-[#161224] px-4 py-1.5 text-xs font-bold uppercase tracking-widest text-[#c084fc] mb-4"
           >
             Pricing &amp; Packages
           </motion.span>
@@ -270,7 +214,7 @@ export function EducationalPricingSection() {
             className="font-display text-4xl sm:text-5xl font-bold text-white mb-4"
           >
             Invest for 2 Years.{" "}
-            <span className="text-gradient-accent">Own the Software Forever.</span>
+            <span className="text-[#a855f7]">Own the Software Forever.</span>
           </motion.h2>
 
           <motion.p
@@ -278,7 +222,7 @@ export function EducationalPricingSection() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.05 }}
-            className="text-gray-400 text-base sm:text-lg"
+            className="text-slate-300 text-base sm:text-lg"
           >
             All-in-one software, branding, and media packages tailored for educators in Bangladesh.
           </motion.p>
@@ -291,29 +235,29 @@ export function EducationalPricingSection() {
           viewport={{ once: true }}
           className="mx-auto max-w-4xl mb-16 grid grid-cols-1 sm:grid-cols-2 gap-4"
         >
-          <div className="flex items-center gap-4 rounded-2xl border border-blue-500/25 bg-blue-500/[0.06] px-5 py-4 backdrop-blur-md">
-            <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-blue-500/15 text-blue-400 border border-blue-500/30">
+          <div className="flex items-center gap-4 rounded-2xl border border-[#32294d] bg-[#13111c] px-5 py-4">
+            <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-[#1c172b] text-[#a855f7] border border-[#32294d]">
               <KeyRound className="h-5 w-5" />
             </div>
             <div>
               <div className="text-sm font-bold text-white">
                 Software Ownership in 2 Years
               </div>
-              <div className="text-xs text-gray-400">
+              <div className="text-xs text-slate-300">
                 Subscribe for 2 years &amp; get 100% software ownership
               </div>
             </div>
           </div>
 
-          <div className="flex items-center gap-4 rounded-2xl border border-violet-500/25 bg-violet-500/[0.06] px-5 py-4 backdrop-blur-md">
-            <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-violet-500/15 text-violet-400 border border-violet-500/30">
+          <div className="flex items-center gap-4 rounded-2xl border border-[#32294d] bg-[#13111c] px-5 py-4">
+            <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-[#1c172b] text-[#a855f7] border border-[#32294d]">
               <ShieldCheck className="h-5 w-5" />
             </div>
             <div>
               <div className="text-sm font-bold text-white">
                 2 Years Free Maintenance
               </div>
-              <div className="text-xs text-gray-400">
+              <div className="text-xs text-slate-300">
                 Saves ৳2,000–৳3,000/month in standard upkeep fees
               </div>
             </div>
@@ -334,13 +278,13 @@ export function EducationalPricingSection() {
                 transition={{ duration: 0.4, delay: index * 0.08 }}
                 className={`relative flex flex-col rounded-3xl p-8 transition-all duration-300 hover:-translate-y-1.5 ${
                   isPopular
-                    ? "border border-blue-500/60 bg-gradient-to-b from-blue-950/40 via-[#0d1222] to-[#0a0c14] shadow-[0_0_50px_-12px_rgba(59,130,246,0.4)] lg:-translate-y-4"
-                    : "border border-white/10 bg-white/[0.02] hover:border-white/20 backdrop-blur-xl"
+                    ? "border-2 border-[#7f0bed] bg-[#191626] lg:-translate-y-4"
+                    : "border border-[#262038] bg-[#13111c] hover:border-[#7f0bed]"
                 }`}
               >
                 {/* Popular Badge */}
                 {isPopular && (
-                  <div className="absolute -top-3.5 left-1/2 -translate-x-1/2 rounded-full bg-gradient-to-r from-blue-600 to-violet-600 px-4 py-1 text-xs font-bold uppercase tracking-wider text-white shadow-lg shadow-blue-500/30">
+                  <div className="absolute -top-3.5 left-1/2 -translate-x-1/2 rounded-full bg-[#7f0bed] px-4 py-1 text-xs font-bold uppercase tracking-wider text-white">
                     {tier.badge}
                   </div>
                 )}
@@ -350,18 +294,18 @@ export function EducationalPricingSection() {
                   <h3 className="font-display text-2xl font-bold text-white mb-1">
                     {tier.name}
                   </h3>
-                  <p className="text-sm text-gray-400">{tier.target}</p>
+                  <p className="text-sm text-slate-300">{tier.target}</p>
                 </div>
 
                 {/* Price */}
-                <div className="mb-8 pb-6 border-b border-white/10">
+                <div className="mb-8 pb-6 border-b border-[#262038]">
                   <div className="flex items-baseline gap-1.5">
                     <span className="font-display text-4xl sm:text-5xl font-extrabold text-white">
                       {tier.annualPrice}
                     </span>
-                    <span className="text-sm text-gray-400">/ year</span>
+                    <span className="text-sm text-slate-300">/ year</span>
                   </div>
-                  <p className="text-xs text-accent-cyan mt-2 font-medium">
+                  <p className="text-xs text-[#c084fc] mt-2 font-medium">
                     {tier.monthlyNote}
                   </p>
                 </div>
@@ -374,20 +318,14 @@ export function EducationalPricingSection() {
                       .includes("software ownership");
                     return (
                       <li key={feature} className="flex items-start gap-3">
-                        <div
-                          className={`mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full ${
-                            isSoftwareOwnership
-                              ? "bg-accent-cyan/20 text-accent-cyan"
-                              : "bg-blue-500/15 text-blue-400"
-                          }`}
-                        >
+                        <div className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-[#1c172b] border border-[#32294d] text-[#a855f7]">
                           <Check className="h-3 w-3" />
                         </div>
                         <span
                           className={`text-sm leading-snug ${
                             isSoftwareOwnership
                               ? "font-semibold text-white"
-                              : "text-gray-300"
+                              : "text-slate-300"
                           }`}
                         >
                           {feature}
@@ -402,10 +340,10 @@ export function EducationalPricingSection() {
                   href={`/contact?service=educational-solutions&package=${encodeURIComponent(
                     `${tier.name} Package (${tier.annualPrice}/year)`
                   )}`}
-                  className={`group inline-flex w-full items-center justify-center gap-2 rounded-full py-4 text-sm font-semibold transition-all duration-300 ${
+                  className={`group inline-flex w-full items-center justify-center gap-2 rounded-full py-4 text-sm font-bold transition-all duration-300 ${
                     isPopular
-                      ? "bg-white text-black hover:bg-gray-200 shadow-lg shadow-blue-500/20"
-                      : "border border-white/15 bg-white/[0.06] text-white hover:bg-white/15"
+                      ? "bg-[#7f0bed] text-white hover:bg-[#6a05d5]"
+                      : "border border-[#32294d] bg-[#1c172b] text-white hover:border-[#7f0bed] hover:bg-[#7f0bed]"
                   }`}
                 >
                   <span>Claim {tier.name}</span>

@@ -1,108 +1,115 @@
 import Image from "next/image";
+import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
 import { motion } from "framer-motion";
 
 const projects = [
   {
     title: "Aura Fine Dining",
-    category: "Restaurant Branding",
+    category: "Restaurant Branding & Web System",
     image:
       "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=2015&auto=format&fit=crop",
-    span: "md:col-span-2 md:row-span-2",
   },
   {
     title: "Elevate Heights",
-    category: "Real Estate Campaign",
+    category: "Real Estate Asset ERP",
     image:
       "https://images.unsplash.com/photo-1522542550221-31fd19575a2d?q=80&w=2070&auto=format&fit=crop",
-    span: "md:col-span-1 md:row-span-1",
   },
   {
     title: "Nova Tech University",
-    category: "University Promotion",
+    category: "Institutional LMS & Growth",
     image:
       "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?q=80&w=2070&auto=format&fit=crop",
-    span: "md:col-span-1 md:row-span-1",
   },
   {
     title: "Horizon Escapes",
-    category: "Travel Agency Marketing",
+    category: "Travel Agency Booking ERP",
     image:
       "https://images.unsplash.com/photo-1436491865332-7a61a109cc05?q=80&w=2074&auto=format&fit=crop",
-    span: "md:col-span-2 md:row-span-1",
   },
 ];
 
 export function Portfolio() {
   return (
-    <section id="portfolio" className="relative bg-surface2 py-32">
+    <section
+      id="portfolio"
+      className="relative border-t border-[#262038] bg-[#0e0c17] py-28"
+    >
       <div className="mx-auto max-w-7xl px-6">
-        <div className="mb-16 flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
+        <div className="mb-14 flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
           <div>
+            <span className="mb-3 inline-block rounded-full border border-[#32294d] bg-[#161224] px-4 py-1.5 text-xs font-semibold uppercase tracking-wider text-[#c084fc]">
+              Case Studies
+            </span>
             <motion.h2
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="font-display mb-4 text-5xl font-bold md:text-6xl"
+              className="font-display mb-3 text-4xl font-bold text-white md:text-6xl"
             >
-              Selected <span className="text-gradient">Works</span>
+              Selected <span className="text-[#a855f7]">Works</span>
             </motion.h2>
             <motion.p
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.1 }}
-              className="text-xl text-gray-400"
+              className="text-lg text-slate-300"
             >
-              A glimpse into our premium digital transformations.
+              A glimpse into our enterprise software and digital transformations.
             </motion.p>
           </div>
+
           <motion.div
             initial={{ opacity: 0, x: 20 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
           >
-            <a
+            <Link
               href="/portfolio"
-              className="flex w-fit items-center gap-2 rounded-full border border-white/20 px-6 py-3 transition-colors hover:bg-white hover:text-black"
+              className="inline-flex w-fit items-center gap-2 rounded-2xl bg-[#7f0bed] px-6 py-3.5 text-sm font-bold text-white transition-all hover:bg-[#6a05d5]"
             >
               View All Projects <ArrowUpRight className="h-4 w-4" />
-            </a>
+            </Link>
           </motion.div>
         </div>
 
-        <div className="grid auto-rows-[300px] grid-cols-1 gap-6 md:grid-cols-3">
+        <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
           {projects.map((project, index) => (
             <motion.div
               key={project.title}
-              initial={{ opacity: 0, y: 30 }}
+              initial={{ opacity: 0, y: 24 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: index * 0.1 }}
-              className={`group relative overflow-hidden rounded-3xl ${project.span}`}
+              transition={{ duration: 0.5, delay: index * 0.08 }}
+              className="group flex flex-col overflow-hidden rounded-3xl border border-[#262038] bg-[#13111c] transition-all duration-300 hover:-translate-y-1 hover:border-[#7f0bed] hover:bg-[#191626]"
             >
-              <Image
-                src={project.image}
-                alt={project.title}
-                fill
-                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                className="object-cover transition-transform duration-700 ease-out group-hover:scale-105"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent opacity-80 transition-opacity duration-300 group-hover:opacity-90" />
+              <Link href="/portfolio" className="block">
+                <div className="relative h-[280px] w-full overflow-hidden bg-[#0b0912] sm:h-[320px]">
+                  <Image
+                    src={project.image}
+                    alt={project.title}
+                    fill
+                    sizes="(max-width: 768px) 100vw, 50vw"
+                    className="object-cover transition-transform duration-700 ease-out group-hover:scale-105"
+                  />
+                </div>
 
-              <div className="absolute inset-0 flex translate-y-4 flex-col justify-end p-8 transition-transform duration-500 group-hover:translate-y-0">
-                <p className="mb-2 text-sm font-medium text-accent-cyan opacity-0 transition-opacity delay-100 duration-500 group-hover:opacity-100">
-                  {project.category}
-                </p>
-                <div className="flex items-center justify-between gap-4">
-                  <h3 className="font-display text-3xl font-bold text-white">
-                    {project.title}
-                  </h3>
-                  <div className="flex h-12 w-12 translate-x-4 items-center justify-center rounded-full bg-white/10 opacity-0 backdrop-blur-md transition-all duration-500 group-hover:translate-x-0 group-hover:opacity-100">
-                    <ArrowUpRight className="h-6 w-6 text-white" />
+                <div className="flex items-center justify-between gap-4 border-t border-[#262038] bg-[#13111c] p-6 transition-colors duration-300 group-hover:bg-[#191626]">
+                  <div>
+                    <p className="mb-1 text-xs font-semibold uppercase tracking-wider text-[#c084fc]">
+                      {project.category}
+                    </p>
+                    <h3 className="font-display text-2xl font-bold text-white transition-colors group-hover:text-[#c084fc]">
+                      {project.title}
+                    </h3>
+                  </div>
+                  <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-2xl border border-[#32294d] bg-[#1c172b] text-[#a855f7] transition-all duration-300 group-hover:scale-105 group-hover:bg-[#7f0bed] group-hover:text-white">
+                    <ArrowUpRight className="h-5 w-5" />
                   </div>
                 </div>
-              </div>
+              </Link>
             </motion.div>
           ))}
         </div>

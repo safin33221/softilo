@@ -15,12 +15,9 @@ const clients = [...brands, ...brands];
 
 export function Marquee() {
   return (
-    <section className="relative overflow-hidden border-y border-white/5 bg-surface/50 py-20">
-      <div className="absolute inset-y-0 left-0 z-10 w-32 bg-gradient-to-r from-background to-transparent" />
-      <div className="absolute inset-y-0 right-0 z-10 w-32 bg-gradient-to-l from-background to-transparent" />
-
+    <section className="relative overflow-hidden border-y border-[#262038] bg-[#0b0912] py-16">
       <div className="mx-auto mb-10 max-w-7xl px-6 text-center">
-        <p className="text-sm font-medium uppercase tracking-[0.3em] text-gray-400">
+        <p className="text-xs font-semibold uppercase tracking-[0.28em] text-[#c084fc]">
           Trusted by modern businesses worldwide
         </p>
       </div>
@@ -34,14 +31,14 @@ export function Marquee() {
             duration: 30,
             ease: "linear",
           }}
-          className="flex w-max items-center gap-8 whitespace-nowrap px-4"
+          className="flex w-max items-center gap-6 whitespace-nowrap px-4"
         >
           {clients.map((client, index) => (
             <div
               key={`${client}-${index}`}
-              className="glass-card flex min-w-[200px] items-center justify-center rounded-full px-8 py-4"
+              className="flex min-w-[200px] items-center justify-center rounded-2xl border border-[#262038] bg-[#13111c] px-8 py-4 transition-colors duration-300 hover:border-[#7f0bed] hover:bg-[#191626]"
             >
-              <span className="font-display text-xl font-bold text-white/70">
+              <span className="font-display text-lg font-bold text-slate-200">
                 {client}
               </span>
             </div>
