@@ -70,9 +70,15 @@ export const metadata: Metadata = {
     images: [
       {
         url: "/logo.jpg",
-        width: 800,
-        height: 800,
+        width: 1024,
+        height: 1024,
         alt: "Softilo (softilo.io) Official Logo",
+      },
+      {
+        url: "/logo.png",
+        width: 1024,
+        height: 1024,
+        alt: "Softilo Brand Mark",
       },
     ],
   },
@@ -97,11 +103,14 @@ export const metadata: Metadata = {
   icons: {
     icon: [
       { url: "/favicon.ico", sizes: "any" },
-      { url: "/logo.svg", type: "image/svg+xml" },
-      { url: "/logo.jpg", type: "image/jpeg" },
+      { url: "/icon.svg", type: "image/svg+xml" },
+      { url: "/manifest-icon-192.png", sizes: "192x192", type: "image/png" },
+      { url: "/manifest-icon-512.png", sizes: "512x512", type: "image/png" },
     ],
     shortcut: ["/favicon.ico"],
-    apple: [{ url: "/logo.jpg" }],
+    apple: [
+      { url: "/apple-icon.png", sizes: "180x180", type: "image/png" },
+    ],
   },
 };
 
@@ -151,11 +160,11 @@ const organizationJsonLd = {
       logo: {
         "@type": "ImageObject",
         "@id": `${SITE_URL}/#logo`,
-        url: `${SITE_URL}/logo.jpg`,
-        contentUrl: `${SITE_URL}/logo.jpg`,
+        url: `${SITE_URL}/logo.png`,
+        contentUrl: `${SITE_URL}/logo.png`,
         caption: "Softilo Official Logo",
-        width: 800,
-        height: 800,
+        width: 1024,
+        height: 1024,
       },
       image: `${SITE_URL}/logo.jpg`,
       description:
@@ -173,9 +182,7 @@ const organizationJsonLd = {
         url: `${SITE_URL}/contact`,
         availableLanguage: ["English", "Bengali"],
       },
-      founder: [
-        { "@id": `${SITE_URL}/#person-safayet-hossan-safin` },
-      ],
+      founder: [{ "@id": `${SITE_URL}/#person-safayet-hossan-safin` }],
       employee: teamData.map((member) => ({
         "@id": `${SITE_URL}/#person-${member.slug}`,
       })),
@@ -216,6 +223,7 @@ const organizationJsonLd = {
       "@id": `${SITE_URL}/#service`,
       name: "Softilo",
       image: `${SITE_URL}/logo.jpg`,
+      logo: `${SITE_URL}/logo.png`,
       url: SITE_URL,
       priceRange: "৳৳",
       email: "hello.softilo@gmail.com",

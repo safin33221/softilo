@@ -56,8 +56,8 @@ export async function generateMetadata({
       images: [
         {
           url: "/logo.jpg",
-          width: 800,
-          height: 800,
+          width: 1024,
+          height: 1024,
           alt: `${service.title} | Softilo`,
         },
       ],

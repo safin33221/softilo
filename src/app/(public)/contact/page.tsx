@@ -27,8 +27,8 @@ export const metadata: Metadata = {
     images: [
       {
         url: "/logo.jpg",
-        width: 800,
-        height: 800,
+        width: 1024,
+        height: 1024,
         alt: "Contact Softilo",
       },
     ],

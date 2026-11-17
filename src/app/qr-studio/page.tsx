@@ -255,19 +255,19 @@ export default function QRStudioPage() {
 
   const handleUseSoftiloLogo = async () => {
     try {
-      const response = await fetch("/logo.svg");
+      const response = await fetch("/logo.png");
       const blob = await response.blob();
       const reader = new FileReader();
       reader.onload = () => {
         if (typeof reader.result === "string") {
           setLogoDataUrl(reader.result);
-          setLogoFileName("softilo-logo.svg");
+          setLogoFileName("logo.png");
         }
       };
       reader.readAsDataURL(blob);
     } catch {
-      setLogoDataUrl("/logo.jpg");
-      setLogoFileName("logo.jpg");
+      setLogoDataUrl("/logo.png");
+      setLogoFileName("logo.png");
     }
   };
 
