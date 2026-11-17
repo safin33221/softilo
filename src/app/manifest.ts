@@ -5,7 +5,7 @@ export default function manifest(): MetadataRoute.Manifest {
     name: "Softilo — Custom Software, ERP & Digital Growth",
     short_name: "Softilo",
     description:
-      "Official Softilo platform (softilo.io) — Enterprise Custom Software, Educational & Travel ERP Systems, Branding, and Digital Growth Solutions.",
+      "Official Softilo platform — Enterprise Custom Software, Educational & Travel ERP Systems, Branding, and Digital Growth Solutions.",
     start_url: "/",
     display: "standalone",
     background_color: "#0a0a0f",

@@ -16,11 +16,11 @@ export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
     default:
-      "Softilo (softilo.io) | Custom Software, Educational & Travel ERP, Branding & Digital Growth",
+      "Softilo | Custom Software, Educational & Travel ERP, Branding & Digital Growth",
     template: "%s | Softilo",
   },
   description:
-    "Softilo (softilo.io) is an official software engineering and digital transformation agency founded by Safayet Hossan Safin and led with COO Jahedul Alam. Specializing in Custom Software, Educational ERP & LMS, Travel Agency ERP, UI/UX Design, Branding, and Digital Growth.",
+    "Softilo  is an official software engineering and digital transformation agency founded by Safayet Hossan Safin and led with COO Jahedul Alam. Specializing in Custom Software, Educational ERP & LMS, Travel Agency ERP, UI/UX Design, Branding, and Digital Growth.",
   applicationName: "Softilo",
   keywords: [
     "Softilo",
@@ -50,10 +50,10 @@ export const metadata: Metadata = {
   ],
   authors: [
     { name: "Softilo", url: SITE_URL },
-    { name: "Safayet Hossan Safin", url: "https://safayet-hossan.vercel.app" },
+    { name: "Safayet Hossan Safin", url: "https://safin.softilo.io" },
     { name: "Jahedul Alam", url: "https://jahedul-alam.vercel.app/" },
   ],
-  creator: "Softilo (softilo.io)",
+  creator: "Softilo",
   publisher: "Softilo",
   category: "technology",
   alternates: {
@@ -64,15 +64,15 @@ export const metadata: Metadata = {
     locale: "en_US",
     url: SITE_URL,
     siteName: "Softilo",
-    title: "Softilo (softilo.io) | Building Brands That Dominate Digitally",
+    title: "Softilo| Building Brands That Dominate Digitally",
     description:
-      "Official website of Softilo (softilo.io) — Enterprise Custom Software, Educational & Travel ERP Systems, High-Impact Branding, and Digital Growth Solutions with 2 Years Free Maintenance & Full Software Ownership.",
+      "Official website of Softilo  — Enterprise Custom Software, Educational & Travel ERP Systems, High-Impact Branding, and Digital Growth Solutions with 2 Years Free Maintenance & Full Software Ownership.",
     images: [
       {
         url: "/logo.jpg",
         width: 1024,
         height: 1024,
-        alt: "Softilo (softilo.io) Official Logo",
+        alt: "Softilo  Official Logo",
       },
       {
         url: "/logo.png",
@@ -84,9 +84,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Softilo (softilo.io) | Custom Software, ERP & Digital Growth",
+    title: "Softilo  | Custom Software, ERP & Digital Growth",
     description:
-      "Official website of Softilo (softilo.io) — Enterprise Custom Software, Educational & Travel ERP Systems, Branding, and Digital Growth Solutions.",
+      "Official website of Softilo  — Enterprise Custom Software, Educational & Travel ERP Systems, Branding, and Digital Growth Solutions.",
     images: ["/logo.jpg"],
   },
   robots: {
@@ -168,7 +168,7 @@ const organizationJsonLd = {
       },
       image: `${SITE_URL}/logo.jpg`,
       description:
-        "Softilo (softilo.io) is a full-service software engineering and digital agency delivering custom web applications, Educational LMS/ERP, Travel Agency ERP, UI/UX design, branding, and performance marketing.",
+        "Softilo  is a full-service software engineering and digital agency delivering custom web applications, Educational LMS/ERP, Travel Agency ERP, UI/UX design, branding, and performance marketing.",
       email: "hello.softilo@gmail.com",
       address: {
         "@type": "PostalAddress",
@@ -212,7 +212,7 @@ const organizationJsonLd = {
       name: "Softilo",
       alternateName: ["Softilo Agency", "softilo.io", "Softilo Official"],
       description:
-        "Official website of Softilo (softilo.io) — Custom Software, Educational & Travel ERP, Branding & Digital Growth.",
+        "Official website of Softilo  — Custom Software, Educational & Travel ERP, Branding & Digital Growth.",
       publisher: {
         "@id": `${SITE_URL}/#organization`,
       },
